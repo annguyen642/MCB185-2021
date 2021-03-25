@@ -1,0 +1,1832 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>gumpy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+/*
+This document has been created with Marked.app <http://markedapp.com>, Copyright 2013 Brett Terpstra
+Content is property of the document author
+Please leave this notice in place, along with any additional credits below.
+---------------------------------------------------------------
+Title: GitHub
+Author: Brett Terpstra
+Description: Github README style. Includes theme for Pygmentized code blocks.
+*/
+html,body{color:black}*:not('#mkdbuttons'){margin:0;padding:0}#wrapper{font:13.34px helvetica,arial,freesans,clean,sans-serif;-webkit-font-smoothing:subpixel-antialiased;line-height:1.4;padding:3px;background:#fff;border-radius:3px;-moz-border-radius:3px;-webkit-border-radius:3px}p{margin:1em 0}a{color:#4183c4;text-decoration:none}#wrapper{background-color:#fff;padding:30px;margin:15px;font-size:14px;line-height:1.6}#wrapper>*:first-child{margin-top:0!important}#wrapper>*:last-child{margin-bottom:0!important}@media screen{#wrapper{box-shadow:0 0 0 1px #cacaca,0 0 0 4px #eee}}h1,h2,h3,h4,h5,h6{margin:20px 0 10px;padding:0;font-weight:bold;-webkit-font-smoothing:subpixel-antialiased;cursor:text}h1{font-size:28px;color:#000}h2{font-size:24px;border-bottom:1px solid #ccc;color:#000}h3{font-size:18px;color:#333}h4{font-size:16px;color:#333}h5{font-size:14px;color:#333}h6{color:#777;font-size:14px}p,blockquote,table,pre{margin:15px 0}ul{padding-left:30px}ol{padding-left:30px}ol li ul:first-of-type{margin-top:0}hr{background:transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;border:0 none;color:#ccc;height:4px;padding:0}#wrapper>h2:first-child{margin-top:0;padding-top:0}#wrapper>h1:first-child{margin-top:0;padding-top:0}#wrapper>h1:first-child+h2{margin-top:0;padding-top:0}#wrapper>h3:first-child,#wrapper>h4:first-child,#wrapper>h5:first-child,#wrapper>h6:first-child{margin-top:0;padding-top:0}a:first-child h1,a:first-child h2,a:first-child h3,a:first-child h4,a:first-child h5,a:first-child h6{margin-top:0;padding-top:0}h1+p,h2+p,h3+p,h4+p,h5+p,h6+p,ul li>:first-child,ol li>:first-child{margin-top:0}dl{padding:0}dl dt{font-size:14px;font-weight:bold;font-style:italic;padding:0;margin:15px 0 5px}dl dt:first-child{padding:0}dl dt>:first-child{margin-top:0}dl dt>:last-child{margin-bottom:0}dl dd{margin:0 0 15px;padding:0 15px}dl dd>:first-child{margin-top:0}dl dd>:last-child{margin-bottom:0}blockquote{border-left:4px solid #DDD;padding:0 15px;color:#777}blockquote>:first-child{margin-top:0}blockquote>:last-child{margin-bottom:0}table{border-collapse:collapse;border-spacing:0;font-size:100%;font:inherit}table th{font-weight:bold;border:1px solid #ccc;padding:6px 13px}table td{border:1px solid #ccc;padding:6px 13px}table tr{border-top:1px solid #ccc;background-color:#fff}table tr:nth-child(2n){background-color:#f8f8f8}img{max-width:100%}code,tt{margin:0 2px;padding:0 5px;white-space:nowrap;border:1px solid #eaeaea;background-color:#f8f8f8;border-radius:3px;font-family:Consolas,'Liberation Mono',Courier,monospace;font-size:12px;color:#333}pre>code{margin:0;padding:0;white-space:pre;border:0;background:transparent}.highlight pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre{background-color:#f8f8f8;border:1px solid #ccc;font-size:13px;line-height:19px;overflow:auto;padding:6px 10px;border-radius:3px}pre code,pre tt{background-color:transparent;border:0}.poetry pre{font-family:Georgia,Garamond,serif!important;font-style:italic;font-size:110%!important;line-height:1.6em;display:block;margin-left:1em}.poetry pre code{font-family:Georgia,Garamond,serif!important;word-break:break-all;word-break:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;white-space:pre-wrap}sup,sub,a.footnote{font-size:1.4ex;height:0;line-height:1;vertical-align:super;position:relative}sub{vertical-align:sub;top:-1px}@media print{body{background:#fff}img,pre,blockquote,table,figure{page-break-inside:avoid}#wrapper{background:#fff;border:0}code{background-color:#fff;color:#333!important;padding:0 .2em;border:1px solid #dedede}pre{background:#fff}pre code{background-color:white!important;overflow:visible}}@media screen{body.inverted{color:#eee!important;border-color:#555;box-shadow:none}.inverted #wrapper,.inverted hr .inverted p,.inverted td,.inverted li,.inverted h1,.inverted h2,.inverted h3,.inverted h4,.inverted h5,.inverted h6,.inverted th,.inverted .math,.inverted caption,.inverted dd,.inverted dt,.inverted blockquote{color:#eee!important;border-color:#555;box-shadow:none}.inverted td,.inverted th{background:#333}.inverted h2{border-color:#555}.inverted hr{border-color:#777;border-width:1px!important}::selection{background:rgba(157,193,200,0.5)}h1::selection{background-color:rgba(45,156,208,0.3)}h2::selection{background-color:rgba(90,182,224,0.3)}h3::selection,h4::selection,h5::selection,h6::selection,li::selection,ol::selection{background-color:rgba(133,201,232,0.3)}code::selection{background-color:rgba(0,0,0,0.7);color:#eee}code span::selection{background-color:rgba(0,0,0,0.7)!important;color:#eee!important}a::selection{background-color:rgba(255,230,102,0.2)}.inverted a::selection{background-color:rgba(255,230,102,0.6)}td::selection,th::selection,caption::selection{background-color:rgba(180,237,95,0.5)}.inverted{background:#0b2531;background:#252a2a}.inverted #wrapper{background:#252a2a}.inverted a{color:#acd1d5}}.highlight .c{color:#998;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k,.highlight .o{font-weight:bold}.highlight .cm{color:#998;font-style:italic}.highlight .cp{color:#999;font-weight:bold}.highlight .c1{color:#998;font-style:italic}.highlight .cs{color:#999;font-weight:bold;font-style:italic}.highlight .gd{color:#000;background-color:#fdd}.highlight .gd .x{color:#000;background-color:#faa}.highlight .ge{font-style:italic}.highlight .gr{color:#a00}.highlight .gh{color:#999}.highlight .gi{color:#000;background-color:#dfd}.highlight .gi .x{color:#000;background-color:#afa}.highlight .go{color:#888}.highlight .gp{color:#555}.highlight .gs{font-weight:bold}.highlight .gu{color:#800080;font-weight:bold}.highlight .gt{color:#a00}.highlight .kc,.highlight .kd,.highlight .kn,.highlight .kp,.highlight .kr{font-weight:bold}.highlight .kt{color:#458;font-weight:bold}.highlight .m{color:#099}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .nb{color:#0086b3}.highlight .nc{color:#458;font-weight:bold}.highlight .no{color:#008080}.highlight .ni{color:#800080}.highlight .ne,.highlight .nf{color:#900;font-weight:bold}.highlight .nn{color:#555}.highlight .nt{color:#000080}.highlight .nv{color:#008080}.highlight .ow{font-weight:bold}.highlight .w{color:#bbb}.highlight .mf,.highlight .mh,.highlight .mi,.highlight .mo{color:#099}.highlight .sb,.highlight .sc,.highlight .sd,.highlight .s2,.highlight .se,.highlight .sh,.highlight .si,.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999}.highlight .vc,.highlight .vg,.highlight .vi{color:#008080}.highlight .il{color:#099}.highlight .gc{color:#999;background-color:#eaf2f5}.type-csharp .highlight .k,.type-csharp .highlight .kt{color:#00F}.type-csharp .highlight .nf{color:#000;font-weight:normal}.type-csharp .highlight .nc{color:#2b91af}.type-csharp .highlight .nn{color:#000}.type-csharp .highlight .s,.type-csharp .highlight .sc{color:#a31515}/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+pre code {
+  display: block; padding: 0.5em;
+  color: #000;
+  background: #f8f8ff
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+  color: #998;
+  font-style: italic
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .lisp .title,
+pre .subst {
+  color: #000;
+  font-weight: bold
+}
+
+pre .ruby .keyword {
+  font-weight: normal
+}
+
+pre .number,
+pre .hexcolor {
+  color: #40a070
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+  color: #d14
+}
+
+pre .title,
+pre .id {
+  color: #900;
+  font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .subst {
+  font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .label,
+pre .tex .command {
+  color: #458;
+  font-weight: bold
+}
+
+pre .class .params {
+	color: #000;
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .instancevar,
+pre .lisp .body {
+  color: #008080
+}
+
+pre .regexp {
+  color: #009926
+}
+
+pre .class {
+  color: #458;
+  font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .lisp .keyword,
+pre .tex .special,
+pre .input_number {
+  color: #0086b3
+}
+
+pre .ruby .identifier .keyword,
+pre .ruby .identifier .keymethods {
+  color: #0086b3;
+}
+
+pre .ruby .constant {
+  color: #008080;
+}
+
+pre .builtin,
+pre .built_in,
+pre .lisp .title {
+  color: #0086b3
+}
+
+pre .preprocessor,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+  color: #999;
+  font-weight: bold
+}
+
+pre .deletion {
+  background: #fdd
+}
+
+pre .addition {
+  background: #dfd
+}
+
+pre .diff .change {
+  background: #0086b3
+}
+
+pre .chunk {
+  color: #aaa
+}
+
+pre .tex .formula {
+  opacity: 0.5;
+}
+</style>
+
+</head>
+<body class="normal">
+  <div id="wrapper">
+      <h1 id="gumpy">GUMPy</h1>
+
+<p>Author: Ian Korf</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>GUMPy is a quick introduction to the tools of the trade for the emerging
+bioinformatics programmer: GitHub, Unix, Markdown, and Python. Most of this
+document is about Unix.</p>
+
+<h2 id="unixvs.linux">Unix vs. Linux</h2>
+
+<p>Most people about to embark on an adventure in bioinformatics programming will
+be using some flavor of Linux (e.g. Debian, Fedora, Mint, Ubuntu, etc.) and not
+actually Unix. Is there a difference between Linux and Unix? Practically, no,
+but philisophically, yes. Linux was designed to behave just like Unix, so they
+are supposed to be very similar. However, Unix has its roots as a commercial
+product and Linux has its roots in open source free software. In this document,
+the terms <em>Linux</em> and <em>Unix</em> are used somewhat interchangeably.</p>
+
+<h2 id="wheredoigetlinux">Where do I get Linux?</h2>
+
+<p>Before we begin, you need a command line Linux environment on your computer. Why
+a CLI (command line interface) rather than a GUI (graphical user interface)?
+When it comes to automating tasks, it&#8217;s easier to automate text commands than
+mouse clicks. Also, most computer clusters run Linux because it&#8217;s free and
+robust. For these reasons, most professional bioinformatics is done with a Linux
+CLI. If you have any aspirations of becoming a bioinformatics programmer, you
+need to become comfortable with the Linux CLI. But before we get to that, you
+need Linux.</p>
+
+<h2 id="unixonmac">Unix on Mac</h2>
+
+<p>If your computer is a Mac, you already have Unix installed, and your specific
+flavor of Unix is called Darwin. You can get to the CLI with the <em>Terminal</em>
+application. You may also find it useful to install Linux virtual machines on
+your Mac. See below for more information.</p>
+
+<h2 id="linuxonpc">Linux on PC</h2>
+
+<p>If your computer is a PC currently running Windows, you will have to install
+Linux <em>somehow</em> and you have several choices. Each of these has advantages and
+disadvantages, which are described in more detail below.</p>
+
+<ul>
+<li>Virtual machine - recommended</li>
+<li>Install Linux on PC - if you have a spare PC</li>
+<li>Windows Subsystem for Linux - official Microsoft solution</li>
+<li>Cygwin - may be useful for advanced users</li>
+<li>Git bash - may be useful for advanced users</li>
+</ul>
+
+<h3 id="virtualmachineonwindows">Virtual Machine on Windows</h3>
+
+<p>This is the current recommendation for Linux on a Windows computer.</p>
+
+<p>A virtual machine (VM) is a fictional computer running inside your normal
+Windows operating system. The virtualization <em>host</em> software (e.g. VirtualBox)
+running on Windows tricks the new <em>guest</em> operating system (Linux) into thinking
+it is attached to its own motherboard, CPU, keyboard, mouse, monitor, etc.</p>
+
+<p>The upside of virtualization is that it&#8217;s safe and inexpensive. It&#8217;s hard to
+destroy data on your computer and you don&#8217;t have to buy any new hardware.
+VirtualBox is free software that works very well. Other popular virtualization
+products include VMware and Parallels. If you want commercial support, you may
+like those.</p>
+
+<p>The downside of a VM is that your virtual machines will take up some RAM, CPU,
+and storage. RAM is the most critical resource because it isn&#8217;t easily shared.
+If you have 8 GB RAM, you could set up your VM with half. But that means both
+your real and virtual machines are running on 4 GB each. Computers run more
+efficiently with more RAM, especially if you&#8217;re the type of person to have 20
+browser tabs open. Adding more RAM to your computer will improve your VM
+experience. You can also run a VM with less RAM if you use a lightweight Linux
+distribution.</p>
+
+<p>On the CPU side, your programs running in a VM will run slower than they could.
+The difference is pretty negligible though. We&#8217;re talking 1&#8211;10% slower. You will
+also have to dedicate about 5&#8211;10 GB of hard disk space. Even with the
+downsides, VMs are a great way to run Linux on your PC.</p>
+
+<p>There are many distributions of Linux. The most obvious differences among them
+is the desktop Graphical User Interface (GUI). Some look like old-school Windows
+while others look like Mac OS, and still others offer their own unique look and
+feel. As bioinformatics programmers, we&#8217;re more interested in the CLI than the
+GUI, so I don&#8217;t concern myself too much with what the desktop. My personal
+favorite distributions are Debian, Mint, and Ubuntu.</p>
+
+<p>Make sure you read the installation directions fully. There are some
+post-install customizations you might need to do. On VirtualBox these include:</p>
+
+<ul>
+<li>Install the Guest Additions &#8220;CD&#8221;</li>
+<li>Switch the virtual video card if you can&#8217;t resize the screen</li>
+<li>Set up a shared folder if you want Linux and Windows to share files</li>
+</ul>
+
+<h3 id="installlinuxonpc">Install Linux on PC</h3>
+
+<p>This is the best way to run Linux, but it may change your PC permanently.</p>
+
+<p>There are a variety of ways you can install Linux on a hard disk. This could be
+an external hard disk you plug in when you want to run Linux (e.g. a flash
+drive), or you can split your current hard disk into multiple partitions, or you
+can wipe Windows and install Linux instead. All of these methods will give you
+Linux with all of the RAM and CPU. Each one is slightly destructive, however,
+and you may accidentally wipe your Windows partition even if you didn&#8217;t intend
+to. For these reasons, if you only have 1 computer, I don&#8217;t recommend installing
+Linux directly. Use VirtualBox, WSL, or Cygwin instead. However if you do have a
+spare computer, installing Linux will give you that fully immersive experience
+that helps you learn Linux faster.</p>
+
+<p>If you want a really cheap Linux computer, you may like a Raspberry Pi. These
+are single board computers using cell phone chips. They are about the size of a
+deck of cards and cost about $50. You can also pick up used computers for next
+to nothing at secondhand stores or from private sales on Craigslist and the
+like.</p>
+
+<h3 id="windowssubsystemforlinux">Windows Subsystem for Linux</h3>
+
+<p>The official Microsoft solution for running Linux is called the Windows
+Subsystem for Linux (WSL). There are two types of WSL, Type 1 and Type 2. Type 1
+is older. It is also compatible with virtual machines like VirtualBox. If you
+want to run both WSL and VBox on the same machine, you should use WSL Type 1.</p>
+
+<p>If you want to be more up-to-date, then use WSL Type 2. Unfortunately,
+installing WSL2 will stop VirtualBox from running. You can have WSL2 and VBox on
+the same computer, but not running at the same time; you will have to edit some
+settings and restart to switch between the two.</p>
+
+<p>The upside of WSL is that it is the official Microsoft product. Most of the time
+it works great. It uses less resources than a VM, so your actual and virtual
+computers will be faster with WSL. The downside of WSL is the Windows and Linux
+filesystems do not play well together. When Windows programs save files in the
+Linux filesystem, some permissions may get reset. It can be annoying. As WSL
+matures, it may become the best way to run Linux on Windows.</p>
+
+<p>From WSL, your Windows C drive is conveniently mounted at <code>/mnt/c</code>. Finding your
+Linux filesystem root from Windows is not so easy.</p>
+
+<h3 id="cygwinonwindows">Cygwin on Windows</h3>
+
+<p>Cygwin is a terminal with Unix commands. In use, it feels similar to WSL.</p>
+
+<p>Cygwin is not an entire operating system but rather a terminal with POSIX
+commands (POSIX is a standard for portable Unix). It does not come pre-installed
+with Python, so you will have to run the Cygwin <code>Setup.exe</code> to install it and
+possibly other programming tools. For basic Python programming, I&#8217;ve found
+Cygwin to work great. However, when I tried to do a <code>pip3 install numpy</code> it did
+not work out of the box. If you have a lot of previous Unix experience and don&#8217;t
+mind troubleshooting software installs, Cygwin can be great. If you&#8217;re more of a
+novice, use something else.</p>
+
+<p>Your Windows C drive is mounted at <code>/cygdrive/c</code>. Your Cygwin root depends on
+where you chose to install it (probably <code>C:\cygdrive</code>).</p>
+
+<h3 id="gitbashonwindows">Git Bash on Windows</h3>
+
+<p>Git Bash is another terminal with Unix commands.</p>
+
+<p>Git Bash is software intended for running git commands on Windows PCs using a
+command line interface. It can be used for more tasks, such as Python
+programming. Some programming languages are built-in (e.g. Perl) but Python is
+not by default. Git Bash feels very similar to Cygwin but software installation
+is slightly more complex. Like Cygwin, experts may like Git Bash, but it&#8217;s not
+for novices.</p>
+
+<h2 id="terminalcommandlineandshell">Terminal, Command Line, and Shell</h2>
+
+<p>To interact with Linux at the CLI you use a <em>terminal</em> application. There are
+many flavors of terminals, each with its own name. Most of them have the word
+&#8216;term&#8217; in them somewhere. For example, <code>xterm</code>, <code>qterm</code>, or just <code>Terminal</code>.</p>
+
+<p>Once you launch a terminal application, you are presented with a command prompt
+where you type <em>stuff</em>. This environment is actually called a <em>shell</em>. There are
+several flavors of shell, each one generally has &#8216;sh&#8217; in the name. Examples
+include <code>sh</code>, <code>bash</code>, <code>csh</code>, <code>ksh</code>, <code>tcsh</code>, and <code>zsh</code>.</p>
+
+<p>Are you confused by terminals and shells? That would be normal. Let&#8217;s have an
+analogy to clear this up.</p>
+
+<p>A <em>terminal</em> is like a <em>word processor</em>. The default applications on Mac and
+Windows are Pages and Word. But just because those are the defaults, doesn&#8217;t
+mean you can&#8217;t install Open Office.</p>
+
+<p>The terminal gives you access to the <em>shell</em>. Here is another place you have a
+choice. Whatever form of Unix you&#8217;re using will have a default shell. That may
+be <code>bash</code> or <code>zsh</code> but you can switch from one to another easily. This is sort
+of like changing the language preferences in your word processor from US English
+to UK English. Some of the spellings and punctuation change, but there are more
+similarities than differences.</p>
+
+<h3 id="terminalbasics">Terminal Basics</h3>
+
+<p>Launch the terminal application (the name of this will differ from one operating
+system to another and even within a particular OS you will have several
+options). Run the <code>date</code> command by typing in the terminal and ending with the
+<em>return</em> key.</p>
+
+<pre><code>date
+</code></pre>
+
+<p>Congratulations, you just made your first Unix statement. You type words on the
+command line (in this case just one) and then hit return to execute the command.
+<code>date</code> is but one of many Unix commands you have at your fingertips (literally).
+Like most Unix commands, <code>date</code> does more than simply output the current date in
+the format you just witnessed. You can choose any number of formats and even set
+the internal clock to a specific time. Let&#8217;s explore this a tiny bit. Commands
+can take <em>arguments</em>. Let&#8217;s tell the <code>date</code> program that we want the date to
+be formatted as year-month-day and with hours-minutes-seconds also. The syntax
+below will seem arcane, but the various abbreviations should be make sense. Type
+the command below and observe the output.</p>
+
+<pre><code>date &quot;+%Y-%m-%d %H:%M:%S&quot;
+</code></pre>
+
+<h3 id="manualpages">Manual Pages</h3>
+
+<p>If you want to learn more information about what <code>date</code> can do, you can either
+look online or use the Unix built-in manual pages. For a quick refresher on a
+command, the manual pages are often easiest. But if you have no idea what the
+command does, than you might want to look for assistance online where you might
+find questions, answers, and examples. To read the manual pages for <code>date</code> you
+use the <code>man</code> command.</p>
+
+<pre><code>man date
+</code></pre>
+
+<p>You can page through this with the space bar and exit with <code>q</code>. In the above
+statement, <code>man</code> was the command and <code>date</code> was the argument. The program that
+let you page through the documentation was another Unix command that you didn&#8217;t
+intentionally invoke, it just happens automatically when you execute the <code>man</code>
+command.</p>
+
+<h3 id="injuryprevention">Injury Prevention</h3>
+
+<p>Typing is bad for your health. Seriously, if you type all day, you will end up
+with a repetitive stress injury. Don&#8217;t type for hours at a time. Make sure you
+schedule breaks. Unix has several ways to save your fingers. Let&#8217;s go back and
+run the <code>date</code> program again. Instead of typing it in, use the <em>up arrow</em> on
+your keyboard to go backwards through your command history. If you scroll back
+too far, you can use the <em>down arrow</em> to move forward through your history
+(but not into the future, Unix isn&#8217;t that smart).</p>
+
+<pre><code>date &quot;+%Y-%m-%d %H:%M:%S&quot;
+</code></pre>
+
+<p>You can use the <em>left arrow</em> and <em>right arrow</em> to position the cursor so you can
+edit the text on the command line.</p>
+
+<p>To see your entire history of commands in this session, use the <code>history</code>
+command.</p>
+
+<pre><code>history
+</code></pre>
+
+<p>Probably the most important finger saver in Unix is <strong>tab completion</strong>. When you
+hit the tab key, the shell completes the rest of the word for you if it can
+guess what you want next. For example, instead of typing out <code>history</code> you can
+instead type <code>his</code> followed by the tab key, the rest of the word will be
+completed. If you use something less specific, you can hit the tab key a second
+time and Unix will show you the various legal words. Try typing <code>h</code> and then the
+tab key twice. Those are all the commands that begin with the letter h. You
+should use tab completion constantly. Not only does it save you key presses and
+time, it also ensures that your spelling is correct. Try misspelling the
+<code>history</code> command to observe the error it reports.</p>
+
+<pre><code>historie
+</code></pre>
+
+<h3 id="variables">Variables</h3>
+
+<p>The shell defines various variables which are called <em>shell variables</em> or
+<em>environment variables</em>. For example, the <code>USER</code> variable contains your user
+name. You can examine the contents of a variable with the <code>printenv</code> command.</p>
+
+<pre><code>printenv USER
+</code></pre>
+
+<p>Another way to print the contents of an environment variable is to use the
+<code>echo</code> command to dereference the <code>$USER</code> variable.</p>
+
+<pre><code>echo Hello $USER, your shell is $SHELL
+</code></pre>
+
+<p>We won&#8217;t use variables much, but it&#8217;s important to know they exist because some
+programs use them for configuration. If you want to see all your environment
+variables, you can use the <code>printenv</code> command without any arguments.</p>
+
+<pre><code>printenv
+</code></pre>
+
+<p>Don&#8217;t worry if you find the topic of environment variables to be a little
+confusing at this time. We will revisit the topic a little later when it matters
+more.</p>
+
+<h3 id="settingupyourworkspace">Setting Up Your Workspace</h3>
+
+<p>Depending on the specific flavor of your operating system, you may have various
+folders in your home directory. For example, Mac, Windows, and Linux generally
+have <em>Desktop</em>, <em>Documents</em>, and <em>Downloads</em> folders. These are default
+locations for your point-n-click files. Let&#8217;s set up a folder to do our
+programming and bioinformatics work. Open a terminal and type the following
+command.</p>
+
+<pre><code>cd
+</code></pre>
+
+<p>The <code>cd</code> command is used to &#8220;change directory&#8221;. If you don&#8217;t give it any
+specific place to go, it will take you to your home directory. There are two
+other ways to get to your home directory: <em>tilde</em> and <code>$HOME</code>. Both of these
+commands do the same thing.</p>
+
+<pre><code>cd ~
+cd $HOME
+</code></pre>
+
+<p>To examine the exact path to your home directory, use the <code>pwd</code> command, which
+stands for &#8220;print working directory&#8221;.</p>
+
+<pre><code>pwd
+</code></pre>
+
+<p>To see the other files in your home directory, type the <code>ls</code> command.</p>
+
+<pre><code>ls
+</code></pre>
+
+<p>You should see your Documents, Downloads, and other folders created by default
+by the operating system. Now it&#8217;s time to create a new working directory for all
+of your bioinformatics programming stuff. Let&#8217;s call it <em>Work</em>.</p>
+
+<pre><code>mkdir Work
+</code></pre>
+
+<p>Note that all of the directories given to you by default were a single word
+starting with a capital letter (e.g. Downloads). We followed this convention
+when we chose <em>Work</em>. However, the typical Unix world is all lowercase. So once
+we enter the Work directory, we&#8217;ll follow Unix standards and go all lowercase.
+Let&#8217;s make another directory inside the <em>Work</em> directory called <em>bin</em>. Then <code>cd</code>
+to <em>Work</em> and have a look around with the <code>ls</code> command.</p>
+
+<pre><code>mkdir Work/bin
+cd Work
+ls
+</code></pre>
+
+<p>You should see <em>bin</em> and nothing else. Let&#8217;s create another directory in here
+called <em>lib</em>.</p>
+
+<pre><code>mkdir lib
+ls
+</code></pre>
+
+<p>Now you should see two things, <em>bin</em> and <em>lib</em>. We won&#8217;t be using these
+directories right away, but we will be using them soon.</p>
+
+<h3 id="creatingandviewingfiles">Creating and Viewing Files</h3>
+
+<p>(For the this exercise and others that follow, it may be useful to have your
+graphical desktop displaying the contents of your Work directory. That way you
+can see that typing and clicking are related. You won&#8217;t actually be using the
+mouse though.)</p>
+
+<p>There are a number of ways to create a file. The <code>touch</code> command will create a
+file or change its modification time (Unix records when the last time a file was
+edited) if it already exists. Let&#8217;s first make sure we are in our Work
+directory. Here you can see why we use the tilde to represent our home
+directory: it saves typing.</p>
+
+<pre><code>cd ~/Work
+touch foo
+</code></pre>
+
+<p>The file <code>foo</code> doesn&#8217;t contain anything at all. It is completely empty. If your
+graphical file browser was open to your Work directory, when you typed you would
+have seen the file magically appear in the file browser. Now lets create a file
+with some content in it.</p>
+
+<pre><code>ls /bin &gt; bar
+</code></pre>
+
+<p>This command listed the <code>/bin</code> directory and <strong>redirected</strong> the output to a file
+named <code>bar</code>. The greater-than sign allows you to send a stream of characters to
+a file. Those characters can be streamed from the <code>ls</code> command as was done here,
+or you could type them at the keyboard. Let&#8217;s try putting some content into
+<code>foo</code> with the keyboard.</p>
+
+<pre><code>cat &gt; foo
+</code></pre>
+
+<p>After you type the line above, the shell appears to hang. It&#8217;s waiting for you
+to start typing. Go ahead and write a few lines of poetry. To close the stream
+of data and save the file, type ^D. What the heck is ^D? In Unix parlance, that
+means hit the <em>control</em> key followed by the <em>d</em> key. This is sometimes written
+as control-D. Note that even though ^D and control-D have a capital D in them,
+you don&#8217;t actually use the shift key. So go ahead and type ^D.</p>
+
+<p>The most useful ways to view a file are with <code>head</code>, <code>tail</code>, <code>more</code>, and <code>less</code>.
+<code>head</code> shows you the first 10 lines of a file, while <code>tail</code> shows you the last
+10. Of course there are command line options to change the number of lines.
+Let&#8217;s try them out.</p>
+
+<pre><code>head foo
+tail foo
+head -5 bar
+tail -5 bar
+</code></pre>
+
+<p>If you want to view a whole file you can do that with <code>cat</code> or <code>less</code>. We just
+saw how <code>cat</code> could be used to create a file, but it can also be used to view
+them.</p>
+
+<pre><code>cat bar
+</code></pre>
+
+<p>This isn&#8217;t very useful for viewing large files unless you&#8217;re a speed reader. A
+more useful way to look at files is with a <em>pager</em>. The <code>more</code> and <code>less</code>
+commands let you see a file one terminal page at a time. This is what you used
+before when viewing the manual page for the <code>date</code> command. Use the spacebar to
+advance by one page, the <em>b</em> key to go backwards by one page, and when you&#8217;re
+done, hit <em>q</em> to quit. <code>more</code> and <code>less</code> do more or less the same thing, but
+oddly enough <code>less</code> does more than <code>more</code>. There are a lot of silly jokes in
+Unix culture.</p>
+
+<pre><code>less bar
+</code></pre>
+
+<h3 id="editingfiles">Editing Files</h3>
+
+<p>Let&#8217;s try editing a file with <code>nano</code>, which is a terminal-based editor.</p>
+
+<pre><code>nano foo
+</code></pre>
+
+<p>This changes the entire look of your terminal. No longer are you typing commands
+at a prompt. Now you&#8217;re editing a file and can change the random text you just
+wrote. Use the arrow keys to move the cursor around. Add some text by typing.
+Remove some text with the delete key. At the bottom, you can see a menu that
+uses control keys. To save the file you hit the ^O key (control and then the
+letter o). You will then be prompted for the file name, at which point you can
+overwrite the current file (bar) or make a new file with a different name. To
+exit nano, hit ^X. Note, you don&#8217;t need to give nano a file name when you start
+it up.</p>
+
+<p>Unix file names often have the following properties:</p>
+
+<ul>
+<li>all lowercase letters</li>
+<li>no spaces in the name (use underscores or dashes instead)</li>
+<li>an extension such as .txt</li>
+</ul>
+
+<h3 id="navigatingdirectories">Navigating Directories</h3>
+
+<p>Whenever you are using a terminal, the shell&#8217;s command line is focused on a
+particular directory. The files you just created above were in a specific
+directory (~/Work). To determine what directory you are currently in, use the
+<code>pwd</code> command (print working directory). Let&#8217;s make sure you&#8217;re in your home
+directory and examine its path.</p>
+
+<pre><code>cd
+pwd
+</code></pre>
+
+<p>Your home directory should be listed below based on your operating
+system.</p>
+
+<ul>
+<li>MacOS - <code>/Users/your_name</code></li>
+<li>Ubuntu - <code>/home/your_name</code></li>
+<li>Lubuntu - <code>/home/your_name</code></li>
+<li>WSL - <code>/home/your_name</code></li>
+</ul>
+
+<p>A path that begins with a <code>/</code> is called an <em>absolute path</em>. Your location also
+has a <em>relative path</em>, which is simply the dot <code>.</code> character. Your full name is
+like an absolute path while pronouns are like a relative path. So &#8220;Ian Frederick
+Korf&#8221; describes the author absolutely, while &#8220;me&#8221; describes me more relatively.
+If I want to reference other people, I can use an absolute or relative path.
+&#8220;Mario Takechi Korf&#8221; describes my brother in absolute terms while &#8220;twin brother&#8221;
+describes him in relative terms.</p>
+
+<p>If you want to know what files are in your home directory, you can do that with
+an absolute path regardless of where your shell is currently focused. You can
+type out the path you found above, or you can dereference the <code>HOME</code> environment
+variable.</p>
+
+<pre><code>echo $HOME
+ls $HOME
+</code></pre>
+
+<p>You can also list your home directory using a relative path. Read the dot as
+&#8220;here&#8221; so the following command is &#8220;list here&#8221;.</p>
+
+<pre><code>ls .
+</code></pre>
+
+<p><code>ls</code> will list your current directory if you don&#8217;t give it an argument, so an
+equivalent statement is simply:</p>
+
+<pre><code>ls
+</code></pre>
+
+<p>Notice that <code>ls</code> reports both the files and directories in your current
+directory. Without icons it&#8217;s a little difficult to figure out which names
+correspond to file and which to directories. So let&#8217;s add a command line option
+to the <code>ls</code> command that will decorate directories with a special character.</p>
+
+<pre><code>ls -F
+</code></pre>
+
+<p>This command adds a character to the end of the file names to indicate what kind
+of files they are. A forward slash character indicates that the file is a
+directory. These directories inside your working directory are called
+<em>sub-directories</em>. They are <strong>below</strong> your current location. There are also
+directories <strong>above</strong> your current focus. There is at most one directory
+immediately above you. We call this the <strong>parent</strong> directory, which in Unix is
+called <code>..</code> (that wasn&#8217;t a typo, it&#8217;s two dots). You can list your parent
+directory as follows:</p>
+
+<pre><code>ls ..
+</code></pre>
+
+<p>The <code>ls</code> command has a lot of options. Try reading the <code>man</code> pages and trying
+some of them out. Now is a good time to experiment with a few command line
+options. Note that you can specify them in any order and collapse them if they
+don&#8217;t take arguments (some options have arguments).</p>
+
+<pre><code>man ls
+ls -a
+ls -l
+ls -l -a
+ls -a -l
+ls -la
+ls -al
+</code></pre>
+
+<p>There are two ways to specify a directory: <em>relative</em> path and <em>absolute</em> path.
+The command <code>ls ..</code> listed the directory above the current directory. The
+command <code>nano bar</code> edited the file <code>bar</code> in the current directory. You could
+also have written <code>nano ./bar</code>. What if you want to list some directory
+somewhere else or edit a file somewhere else? We actually did that before with
+<code>ls /bin &gt; foo</code>. To specify the absolute path, you precede the path with a
+forward slash. For example, to list the absolute root of the Unix file system,
+you would type the following:</p>
+
+<pre><code>ls /
+</code></pre>
+
+<p>To list the contents of /usr/bin you would do the following:</p>
+
+<pre><code>ls /usr/bin
+</code></pre>
+
+<p>This works exactly the same from whatever your current working directory is
+because <code>/usr/bin</code> is an absolute path. However, if you do <code>ls bin</code> it only
+works if you happen to have a directory or file called <code>bin</code> in your current
+focus.</p>
+
+<hr />
+
+<p>To change your working directory, use the <code>cd</code> command. Try changing to the root
+directory</p>
+
+<pre><code>cd /
+pwd
+ls
+</code></pre>
+
+<p>Now return to your home directory by executing <code>cd</code> without any arguments.</p>
+
+<pre><code>cd
+pwd
+ls
+</code></pre>
+
+<p>Now go back to the root directory and create a file in your Work directory. That
+is, your shell will have its focus on the root directory, but the files you
+create will be in your Work directory. Open your GUI file browser to your Work
+directory before you begin these commands.</p>
+
+<pre><code>cd /
+touch $HOME/Work/file1
+touch ~/Work/file2
+ls ~/Work
+</code></pre>
+
+<h3 id="movingandrenamingfiles">Moving and Renaming Files</h3>
+
+<p>Your home directory is starting to fill up with a bunch of crap. Let&#8217;s organize
+that stuff. First off, let&#8217;s create a new directory for <code>stuff</code> using the
+<code>mkdir</code> command.</p>
+
+<pre><code>cd ~/Work
+mkdir stuff
+</code></pre>
+
+<p>Let&#8217;s move some files into that new directory with the <code>mv</code> (move) command.</p>
+
+<pre><code>mv foo stuff
+</code></pre>
+
+<p>The file <code>foo</code> is now inside the directory <code>stuff</code>. You can observe this by
+listing the current directory, which no longer contains <code>foo</code>, and <code>stuff</code>,
+where it now resides.</p>
+
+<pre><code>ls .
+ls stuff
+</code></pre>
+
+<p>The weird thing about the <code>mv</code> command is that it not only moves files into
+directories, it can also rename them. Let&#8217;s try renaming <code>bar</code> to <code>bark</code>.</p>
+
+<pre><code>mv bar bark
+</code></pre>
+
+<p>The difference between <code>mv foo stuff</code> and <code>mv bar bark</code> is that in the former
+case there was a directory called <code>stuff</code> and in the latter there wasn&#8217;t. This
+is the key to <code>mv</code> command. If the last argument exists, it tries moving the
+first argument (the file) into the last argument (the directory). What if you
+try moving a file onto an already existing file? Let&#8217;s do that with the
+previously created <code>file</code> and <code>file2</code>.</p>
+
+<pre><code>mv file1 file2
+ls .
+</code></pre>
+
+<p>Whoops. <code>file1</code> just got renamed to <code>file2</code>. In other words, the contents of
+<code>file2</code> just got permanently deleted. For this reason, sometimes people use the
+<code>-i</code> flag to turn on interactive mode. Let&#8217;s recreate the previous files and try
+this again.</p>
+
+<pre><code>touch file1 file2
+ls
+mv -i file1 file2
+</code></pre>
+
+<p>Now you get a warning before doing any destructive activities!</p>
+
+<p><code>mv</code> can move and rename a file at the same time. Let&#8217;s put <code>bark</code> into the
+<code>stuff</code> directory and change its name back to <code>bar</code>.</p>
+
+<pre><code>mv bark stuff/bar
+ls stuff
+</code></pre>
+
+<p><code>mv</code> can move multiple things at the same time. Let&#8217;s move both <code>file1</code> and
+<code>file2</code> into the <code>stuff</code> directory.</p>
+
+<pre><code>mv file1 file2 stuff
+ls stuff
+</code></pre>
+
+<h3 id="wildcards">Wildcards</h3>
+
+<p>One of the most useful time-saving tricks in the shell is the use of the <code>*</code>
+character as a wildcard. The <code>*</code> character matches missing characters if it can.
+If we want to list the files in <code>stuff</code> that start with the letter <em>f</em> we do the
+following:</p>
+
+<pre><code>ls stuff/f*
+</code></pre>
+
+<p>A very common use of the wildcard is to match all files with a specific file
+extension. Let&#8217;s try that.</p>
+
+<pre><code>touch a.txt b.txt
+ls *.txt
+mv *.txt stuff
+</code></pre>
+
+<h3 id="copyingandaliasing">Copying and Aliasing</h3>
+
+<p>The <code>cp</code> command copies files. Let&#8217;s say you wanted to make a copy of <code>bar</code>
+which is currently in your Work directory. You have to tell <code>cp</code> where you want
+that copy to exist. It can&#8217;t exist in the exact same location. You&#8217;ll either
+have to give it a different location or change its name. Let&#8217;s first try giving
+it a new location.</p>
+
+<pre><code>cp stuff/bar .
+</code></pre>
+
+<p>The previous command reads as &#8220;copy the bar file from the stuff directory to my
+current location&#8221;. We could also copy the file without changing its location,
+but we have to give it a new name.</p>
+
+<pre><code>cp stuff/bar stuff/bark
+ls stuff
+</code></pre>
+
+<h3 id="deletingfiles">Deleting Files</h3>
+
+<p>You delete files with the <code>rm</code> command. Be careful, because once gone, files are
+gone forever. If you want a safer, interactive version of <code>rm</code> use it with the
+<code>-i</code> flag (we saw this earlier with <code>mv</code>).</p>
+
+<pre><code>ls stuff
+rm stuff/file1
+ls stuff
+rm -i bar
+</code></pre>
+
+<p>As a reminder, you didn&#8217;t type those file names completely, right? You used tab
+completion, right?</p>
+
+<p>You can delete multiple files at once too and even whole directories. Watch out
+though, that can get dangerous. If you want to completely remove everything in
+the <code>stuff</code> directory, you <em>could</em> do the following (but please don&#8217;t):</p>
+
+<pre><code>rm stuff/*
+</code></pre>
+
+<p>That will still leave the <code>stuff</code> directory intact, but without any files. If
+you want to remove the directory, you use the <code>rmdir</code> command. You can try this,
+but it won&#8217;t work because the directory isn&#8217;t empty. <code>rmdir</code> only removes empty
+directories.</p>
+
+<pre><code>rmdir stuff
+</code></pre>
+
+<p>If you want to remove a directory and everything it contains, you can use the
+<code>-r</code> flag to recursively delete everything inside and the <code>-f</code> flag to force
+delete of protected files. This is highly, highly destructive, so maybe don&#8217;t do
+it.</p>
+
+<pre><code>rm -rf stuff
+</code></pre>
+
+<p>The worst possible thing you could do is unintentionally use the wildcard <code>*</code>
+with the <code>rm</code> command with slightly incorrect syntax. Here, let me show you how
+to destroy everything.</p>
+
+<pre><code>rm -rf stuff *
+</code></pre>
+
+<p>You may have wanted to do <code>rm -rf stuff/*</code> but the space between <code>stuff</code> and <code>*</code>
+means that <code>*</code> matches <strong>EVERYTHING</strong>. So that&#8217;s how you delete everything in
+your current directory. If you happen to be in your home directory, you just
+deleted everything you own. Ask me how I know.</p>
+
+<p>Since <code>mv</code>, <code>cp</code>, and <code>rm</code> can be so dangerous, many people create aliases that
+force each command to be interactive. We&#8217;ll see how to do this a little farther
+below when we get to the more advanced Unix section.</p>
+
+<h2 id="markdown">Markdown</h2>
+
+<p>Most of the files we work with in Linux are plain text files. Many things change
+in this world, but not the format of text files. Got some old poetry you wrote
+in WriteNow? Well, that software doesn&#8217;t exist anymore, so good luck viewing it.
+However, any text file since the dawn of Unix still works just fine.</p>
+
+<h3 id="textvsbinary">Text vs Binary</h3>
+
+<p>There are two main types of files you will encounter: text and binary. You can
+view text files with <code>less</code> and edit them with <code>nano</code>, for example. All of the
+programs we will write will be text files. You can also view and edit binary
+files but they look like gobledygook, not English. If you want to see what a
+binary file looks like, try the following.</p>
+
+<pre><code>less /bin/ls
+</code></pre>
+
+<p>You&#8217;re looking at the machine code for the <code>ls</code> program. It&#8217;s not meant to be
+human-readable. These are machine-specific instructions designed for machines,
+not humans. So what makes a file text or binary? To answer that, we need to
+delve into the world of bits and bytes.</p>
+
+<h3 id="bitsbytesandascii">Bits, Bytes, and ASCII</h3>
+
+<p>A <em>bit</em> is a single binary digit representing a 0 or 1. The number &#8220;1&#8221; is just 1
+as we know it. The number &#8220;10&#8221; is 2 in decimal notation. There is a &#8220;1&#8221; in the
+2s place and a 0 in the &#8220;1s&#8221; place, so 2 + 0 = 2. Similarly, the number &#8220;11&#8221; in
+binary is 3 in decimal and the number &#8220;101&#8221; in binary is &#8220;5&#8221; in decimal (1 four,
+zero 2, 1 one).</p>
+
+<p>A byte is 8 bits. Computers usually deal in bytes. So we don&#8217;t normally talk
+about a number like &#8220;101&#8221; to represent 5 but rather the 8-digit version of that
+&#8220;00000101&#8221;. So what number is &#8220;10000000&#8221;? Well that depends if you&#8217;re working in
+base 2, decimal, or something else entirely. In order to clarify these things,
+people often put two characters at the front to signify the base when it&#8217;s not
+base&#8211;10. Prepending the numerals with &#8220;0b&#8221; tells people &#8220;I&#8217;m using binary&#8221;. So
+&#8220;0b10000000&#8221; means 128 and not ten million.</p>
+
+<p>We actually use the &#8220;byte&#8221; more frequently than you might guess. However, when
+we do so, it&#8217;s usually in <em>hexidecimal</em> notation. In base 2, there are 2
+symbols: 0 and 1. In base 10 (ordinary decimal) there are 10 symbols: 0, 1, 2,
+3, 4, 5, 6, 7, 8 , and 9. In base 16 (hexidecimal), there are 16 symbols: 0, 1,
+2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, and F. So the symbol &#8220;B&#8221; in hexidecimal
+means &#8220;11&#8221; in decimal.</p>
+
+<p>Have you ever seen internet addresses of the form 192.168.1.1? Ever wondered
+what those 4 numbers are? Each one is a byte. So each one can have a value from
+&#8220;0b00000000&#8221; to &#8220;0b11111111&#8221;. In other words, each value can be from &#8220;0x00&#8221; to
+&#8220;0xFF&#8221;. Or more familiarly, from 0 to 255. These same byte notations are used
+all over the place in computers. You might have seen colors such as &#8220;FF0000&#8221; or
+&#8220;FF00FF&#8221; (those are red and magenta respectively). Or you may have had to use
+the MAC address of your network adapater, which may have looked like
+&#8220;f0:18:98:e9:f2:be&#8221; (upper and lowercase don&#8217;t matter in hexidecimal).</p>
+
+<p>So now it&#8217;s time to understand the difference between text an binary. A text
+file typically uses only the 7 bits defined by ASCII (American Standard Code for
+Information Interchange). That is, each byte is confined to the range from 0 to
+127. In binary that&#8217;s &#8220;0b00000000&#8221; to &#8220;0b01111111&#8221;. In hex, that&#8217;s &#8220;0x00&#8221; to
+&#8220;0x7F&#8221;. All of the numbers equal to or greater than than &#8220;0b10000000&#8221; or &#8220;0x80&#8221;
+or 128 are outside the ACSII space.</p>
+
+<p>In a plain text file, every symbol (e.g letter or punctuation) has a
+corresponding value in the range of 0&#8211;127. For example, captial &#8220;A&#8221; is
+&#8220;0b01000001&#8221; or &#8220;0x41&#8221; or 65 (decimal). Similarly, capital &#8220;B&#8221; is &#8220;0b01000010&#8221;
+or &#8220;0x42&#8221; or 66. The numbers from 0&#8211;9 are in ASCII slots 48&#8211;57, the capital
+letters are 65&#8211;90, the lowercase letters are 97&#8211;122, and other symbols are in
+various places (32&#8211;47, 58&#8211;64, 91&#8211;96, 123&#8211;127). Everything below 32 is invisible.</p>
+
+<p>At this point you may be wondering about other alphabets and how they get
+encoded in a computer. Surely you can&#8217;t fit all of the symbols in human language
+into the range of 0&#8211;127. You can&#8217;t. There are 2-byte encodings that offer many
+more symbols. But for now, we are only considering ASCII.</p>
+
+<h3 id="formattingplaintext">Formatting Plain Text</h3>
+
+<p>Text files are incredibly simple. There are no choices of ruler settings, font
+family, font style, lists, or tables you expect to find in a word processing
+document. However, sometimes you want part of a text file to look like a
+heading, or boldface, or a list. There are lots of ways you can imagine doing
+that from the use of capital letters to punctuation. Markdown is a Internet
+standard for writing text files. If you follow the standard, you can turn your
+plain text documents into beautifully formatted HTML or PDF that has actual
+headings, hyperlinks, font styles, lists, etc.</p>
+
+<p>To find out how to write Markdown, check out the website linked below. This is
+the official home of vanilla Markdown. There are a few customizations of
+Markdown that add a few more things like tables.</p>
+
+<p><a href="Markdown">https://daringfireball.net/projects/markdown</a></p>
+
+<p>Another way to learn Markdown is to compare an HTML or PDF file to its original
+Markdown plain text source document.</p>
+
+<p>Let&#8217;s create our first Markdown document in <code>nano</code>.</p>
+
+<pre><code>nano plans.md
+</code></pre>
+
+<p>Now let&#8217;s enter some content.</p>
+
+<pre><code>To Do List
+==========
+
+Here are some of the things I'm working on this week.
+
++ Learn some Unix commands
++ Learn how to write in Markdown **now**
++ Learn how to program in Python
++ Get my code into GitHub like all _professional_ developers
+</code></pre>
+
+<p>As you can see, even without the use of headings, font sizes, type faces,
+rulers, etc. we are able to communicate document structure and emphasis. &#8220;To Do
+List&#8221; is clearly the title. The plus signs are clearly a bulleted list. The use
+of asterixes and underscores clearly show emphasis. Follow a few simple Markdown
+rules and you&#8217;ll end up with beautiful documents that are easy to write and a
+pleasure to read as text, HTML, PDF, etc.</p>
+
+<h2 id="githubrepository">GitHub Repository</h2>
+
+<p>If you want people to believe you&#8217;re a programmer, you have to act like one.
+That starts with you having a GitHub account. Your repositories and activity are
+part of your CV. If you don&#8217;t have a GitHub account, it&#8217;s time to point your web
+browser to go to <a href="GitHub">https://github.com</a> and create your account.</p>
+
+<p>Choose a username that isn&#8217;t stupid. Remember, this will be part of your CV. I
+use my full name. After setting your email and password, choose the free plan
+and then answer a few questions about your interests to create your account.</p>
+
+<p>Now check your email to verify your email address. It&#8217;s time to create your
+first repository! Name this <code>learning_python</code>. Select the radio button to make
+this Public, and also check the box to initialize with a README. Lastly, you
+should add a license in the dropdown menu to get in the habit of doing all
+programming things properly. I generally use the MIT License.</p>
+
+<p>The next step is to add your repository to the Work directory you just created.
+Click on the green <strong>Clone or download</strong> button and copy the URL there. It
+should look something like &#8220;https://github.com/USERNAME/learning_python.git&#8221;,
+where USERNAME is whatever you chose as your GitHub name.</p>
+
+<pre><code>cd ~/Work
+git clone https://github.com/USERNAME/learning_python.git
+</code></pre>
+
+<p>This will create a new directory called <code>learning_python</code> in your <code>Work</code>
+directory. If you look inside, you will see that it contains two files:
+<code>LICENSE</code> and <code>README.md</code>. The LICENSE basically says that other people can use
+your code but that they have to acknowledge that you wrote it and if anything
+bad happens, it wasn&#8217;t your fault.</p>
+
+<h2 id="gitcommands">Git Commands</h2>
+
+<p>Enter your repository and check its status.</p>
+
+<pre><code>cd learning_python
+git status
+</code></pre>
+
+<p>You will see that git reports that your repository is up to date. Let&#8217;s modify a
+file and see what happens. Edit the <code>README.md</code> file so that it has a little
+more information. For example, you might add your name and someting about your
+learning goals.</p>
+
+<pre><code>nano README.md
+</code></pre>
+
+<p>After saving your changes, check your repository status again.</p>
+
+<pre><code>git status
+</code></pre>
+
+<p>This shows that <code>README.md</code> has been changed. In order to put those changes back
+into GitHub, you&#8217;ll need to <code>add</code>, <code>commit</code>, and <code>push</code>.</p>
+
+<pre><code>git add README.md
+git commit -m &quot;update&quot;
+git push
+</code></pre>
+
+<p>The <code>add</code> argument tells <code>git</code> we want to start tracking changes to this file.
+The <code>commit</code> tells <code>git</code> we are done with edits, and the <code>-m</code> provides a short
+message about what work was done. The <code>push</code> tells git to upload it back to
+GitHub.</p>
+
+<p>The general workflow with <code>git</code> is the following.</p>
+
+<ol>
+<li>Create a file</li>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+<li><code>git push</code></li>
+<li>Time passes&#8230;</li>
+<li><code>git pull</code></li>
+<li>Edit files</li>
+<li>Go back to step 2</li>
+</ol>
+
+<h2 id="helloworld">Hello World</h2>
+
+<p>It&#8217;s time to write your first Python program. We&#8217;re going to do this with
+<code>nano</code>. Start <code>nano</code> by typing the command name followed by the file you want to
+create.</p>
+
+<pre><code>cd ~/Work
+nano hello_world.py
+</code></pre>
+
+<p>Now type the following line:</p>
+
+<pre><code>print('hello world')
+</code></pre>
+
+<p>Hit ^O (that&#8217;s the command key plus the o key) to save the file and the ^W to
+exit nano. Now let&#8217;s try running the command from the shell.</p>
+
+<pre><code>python3 hello_world.py
+</code></pre>
+
+<p>If everything worked okay, you should have seen &#8216;hello world&#8217; in your terminal.
+If not, don&#8217;t go on. Ask for help fixing your computing environment.</p>
+
+<hr />
+
+<p>Now it&#8217;s time to add your new file to your repository. First let&#8217;s check the
+status of your repo.</p>
+
+<pre><code>git status
+</code></pre>
+
+<p>This shows that <code>hello_world.py</code> is not currently being tracked. So let&#8217;s add,
+commit, and push it.</p>
+
+<pre><code>git add hello_world.py
+git commit -m &quot;initial commit&quot;
+git push
+</code></pre>
+
+<p>Check the GitHub website. You&#8217;ll see that your changes to <code>README.md</code> are there
+as well as the new file <code>hello_world.py</code>.</p>
+
+<p>It might seem like git is a lot of effor just to upload your code to a website.
+If that&#8217;s all git did, it would be too much effort, but git allows you to do a
+lot more. Git tracks every change you make to a file, allowing you to rewind it
+to any point in time. Git allows you to make a <em>branch</em> of related work and then
+later merge it back in with the main trunk if desired. More importantly, git
+allows multiple developers to work simultaneously on the same project without
+destroying each others work. We aren&#8217;t using those advanced features yet. Right
+now, our focus is on backing up our code and logging our programming activity to
+the GitHub website.</p>
+
+<hr />
+
+<p>Previously, when we wanted to run the program <code>hello_world.py</code> we had to proceed
+that with the command <code>python3</code>. Most of the programs you&#8217;ve seen so far, like
+<code>date</code> or <code>ls</code> did not require anything other than the name of the program. We
+can change <code>hello_world.py</code> to work in the same manner. While this isn&#8217;t really
+necessary, it&#8217;s very important to understand how programs work, so we&#8217;re going
+to modify <code>hello_world.py</code> to be just like <code>ls</code>.</p>
+
+<p>Use nano top edit the file.</p>
+
+<pre><code>nano hello_world.py
+</code></pre>
+
+<p>Now modify it so that it looks like the following:</p>
+
+<pre><code>#!/usr/bin/env python3
+print('hello world')
+</code></pre>
+
+<p>The file should have <em>exactly</em> 2 lines. Line 1 has the &#8220;hash bang&#8221; <em>interpreter
+directive</em>. The first line of a text file tells Unix which language to use. Make
+sure the first character of the file is <code>#</code> and that there are no additional
+leading spaces. Line 2 is what you had before. Save this file and then push the
+changes back to your repo. We&#8217;re not done yet. This is just the first step.</p>
+
+<h2 id="morelinux">More Linux</h2>
+
+<p>In order for a text file to function as a program it needs 3 things.</p>
+
+<ol>
+<li>An interpreter directive on the first line (we just did this)</li>
+<li>Permission to be executed</li>
+<li>Placed in the executable path</li>
+</ol>
+
+<h3 id="filepermissions">File Permissions</h3>
+
+<p>A file can have 3 kinds of permissions: read, write, and execute. These are
+abbreviated as <code>rwx</code>. If a file has read permissions, you can view it. If it has
+write permissions, you can edit it, which includes deleting it. If it has
+execute permissions, you can run it as a program.</p>
+
+<p>Directories are special kinds of files that also have the same permissions.
+Here, read means you can view the files in the directory. Write means you can
+add or delete files in the directory. Execute means you can enter the directory.</p>
+
+<p>Generally, you would like to be able to read, write, and execute the directories
+you own. But this isn&#8217;t always true of files. You may have downloaded some
+important data and want to make sure you can&#8217;t modify or delete it. Permissions
+allow you to modify what actions can be take by whom.</p>
+
+<p>In addition to having 3 types of permissions (read, write, execute), every file
+also has 3 types of people that can access it: the owner (you), the group you
+belong to (e.g. a laboratory), or the public (everyone else who has access to
+the computer).</p>
+
+<p>Let&#8217;s examine the file permissions on the directories and files you
+currently have.</p>
+
+<pre><code>cd ~/Work
+ls -lF
+</code></pre>
+
+<p>You should see something like the following:</p>
+
+<pre><code>drwxr-xr-x  2 ian ian 4096 Feb 7 10:01 bin/
+drwxr-xr-x  2 ian ian 4096 Feb 7 10:01 lib/
+drwxr-xr-x  2 ian ian 4096 Feb 7 10:11 learning_python/
+</code></pre>
+
+<p>Let&#8217;s break down what&#8217;s happening with the first arcane set of symbols. The
+first letter is <code>d</code> which indicates that the file is a directory. We can also
+see this because of the trailing slash from the <code>ls -F</code>. The next 9 characters
+are 3 triplets.</p>
+
+<ul>
+<li>rwx the first triplet are your permissions</li>
+<li>r-x the second triplet are group permissions</li>
+<li>r-x the third triplet are public permissions</li>
+</ul>
+
+<p>You may read, write, and execute the directory. That is, you have permission to
+<code>ls</code> the directory, <code>rm</code> files in the directory, and <code>cd</code> into the directory.
+Users who belong to your group can also read and enter your directories, but
+they can&#8217;t modify their contents.</p>
+
+<p>Let&#8217;s take a look at the permissions of <code>hello_world.py</code>.</p>
+
+<pre><code>cd learning_python
+ls -l hello_world.py
+</code></pre>
+
+<p>On Ubuntu, this is what I found, however the default permissions for your Linux
+distribution may be different.</p>
+
+<pre><code>-rw-r--r-- 1 ian ian 44 Feb 7 11:00 hello_world.py
+</code></pre>
+
+<p>After the leading dash, there are 3 triplets of symbols. The first triplet shows
+user permissions <code>rw-</code>. I have read and write permission but not execute. The
+next triplets are for group and public. Both have read permission, but not write
+or execute. Let&#8217;s first turn on all permissions for everyone using the <code>chmod</code>
+command and then list again.</p>
+
+<pre><code>chmod 777 hello_world.py
+ls -l hello_world.py
+</code></pre>
+
+<p>Notice that you can now see <code>rwx</code> for owner, group, and public.</p>
+
+<pre><code>insert whatever
+</code></pre>
+
+<p>Does it make sense for <em>everyone</em> to be able to edit your files? Probably not.
+It also doesn&#8217;t make sense for plain text files with your shopping list to have
+executable permissions. So turning everything on isn&#8217;t a good idea.</p>
+
+<p>The <code>chmod</code> command has two different syntaxes. The more human readable one
+looks like this.</p>
+
+<pre><code>chmod u-x hello_world.py
+ls -l hello_world.py
+</code></pre>
+
+<p>This command says: &#8220;change the user (u) to remove (-) the execute (x) permission
+from file hello_world.py&#8221;. You add permissions with +.</p>
+
+<pre><code>chmod u+x hello_world.py
+ls -l hello_world.py
+</code></pre>
+
+<p>The less readable <code>chmod</code> format assigns all parameters in octal format. 4 is
+the read permission. 2 is the write permission. 1 is the execute permission.
+Each rwx corresponds to one octal number from 0 to 7. So <code>chmod 777</code> turns on
+all permissions for all types of people and <code>chmod 000</code> turns them all off.</p>
+
+<table>
+<colgroup>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:center;">Read</th>
+	<th style="text-align:center;">Write</th>
+	<th style="text-align:center;">Exec</th>
+	<th style="text-align:center;">Sum</th>
+	<th style="text-align:left;">Meaning</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:center;">4</td>
+	<td style="text-align:center;">0</td>
+	<td style="text-align:center;">0</td>
+	<td style="text-align:center;">4</td>
+	<td style="text-align:left;">only reading allowed</td>
+</tr>
+<tr>
+	<td style="text-align:center;">4</td>
+	<td style="text-align:center;">2</td>
+	<td style="text-align:center;">0</td>
+	<td style="text-align:center;">6</td>
+	<td style="text-align:left;">reading and writing allowed</td>
+</tr>
+<tr>
+	<td style="text-align:center;">4</td>
+	<td style="text-align:center;">2</td>
+	<td style="text-align:center;">1</td>
+	<td style="text-align:center;">7</td>
+	<td style="text-align:left;">reading, writing, and executing allowed</td>
+</tr>
+<tr>
+	<td style="text-align:center;">4</td>
+	<td style="text-align:center;">0</td>
+	<td style="text-align:center;">1</td>
+	<td style="text-align:center;">1</td>
+	<td style="text-align:left;">reading and executing allowed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="makinghello_world.pyexecutable">Making hello_world.py Executable</h3>
+
+<p>Now that your hello_world.py program has execute permissions, you can use it
+like a Unix program. That is, you don&#8217;t have to type <code>python3</code> before the
+program name.</p>
+
+<pre><code>./hello_world.py
+</code></pre>
+
+<p>But what&#8217;s with the <code>./</code> before the program name. You don&#8217;t have to type that
+when you run the <code>ls</code> command or the <code>chmod</code> command, for example. That&#8217;s
+because those programs are in your <strong>executable path</strong> and <code>hello_world.py</code> is
+not. We&#8217;ll fix that in a bit.</p>
+
+<h3 id="filesonflashdrives">Files on Flash Drives</h3>
+
+<p>Most flash drives are formatted to be compatible with Windows machines. Each
+operating system has a different idea about how to store filesystem metadata
+such as permissions. Because of this, most files on flash drives end up with all
+permission set. In octal, that would be 777 (read, write, execute) for owner,
+group, and public. This is the most permissive setting and can be a little
+dangerous. After copying files from a flash drive to your Unix machine, it&#8217;s
+probably a good idea to change the permissions to something more sensible.</p>
+
+<h3 id="customizingyourshell">Customizing Your Shell</h3>
+
+<p>In order to simplify a few things, we need to customize your shell. First, we
+have to figure out which shell you&#8217;re running. Your shell is in your SHELL
+environment variable. Here are two ways of seeing that.</p>
+
+<pre><code>printenv SHELL
+echo $SHELL
+</code></pre>
+
+<p>If your shell is <code>/bin/bash</code> then check if you have a file called <code>.profile</code> or
+<code>.bash_profile</code> or <code>.bashrc</code> in your home directory. If you already have one of
+those files, edit it with nano. If not, create a <code>.profile</code> with nano.</p>
+
+<p>If your shell is <code>/bin/zsh</code> then check if you have a file called <code>.zshrc</code>. If it
+exists, edit it with nano. If not, create it with nano.</p>
+
+<p>Now enter the following 2 lines into the file you&#8217;re editing.</p>
+
+<pre><code>alias ls=&quot;ls -F&quot;
+export PATH=$PATH:$HOME/Work/bin
+</code></pre>
+
+<p>The first line makes it so that whenever you use the <code>ls</code> command, you&#8217;re
+actually invoking <code>ls -F</code> which displays the file type by appending a <code>*</code> to
+executable files and a <code>/</code> to directories.</p>
+
+<p>The second line adds your <code>Work/bin</code> directory to the executable path. Now, any
+script you put into <code>Work/bin</code> can be run like any other program. Note that this
+is optional. Also, instead of moving programs into <code>Work/bin</code> you could make
+aliases there that connect to the original location of the scripts.</p>
+
+<p>To protect yourself from accidentally overwriting or removing files, you might
+want to add interactive mode for a few commands.</p>
+
+<pre><code>alias rm=&quot;rm -i&quot;
+alias mv=&quot;mv -i&quot;
+alias cp=&quot;cp -i&quot;
+</code></pre>
+
+<h3 id="pythonpath">PYTHONPATH</h3>
+
+<p>Just like your shell needs to know where your programs live, Python needs to
+know where your libraries live. It&#8217;s going to be a while before we are writing
+our own libraries, but we should set things up for that later. It looks very
+similar to the PATH setup you just did.</p>
+
+<pre><code>export PYTHONPATH=$PYTHONPATH:$HOME/Work/lib
+</code></pre>
+
+<h2 id="editorsandides">Editors and IDEs</h2>
+
+<p>It&#8217;s time to stop using <code>nano</code>. While it is useful for very small tasks, it&#8217;s
+not a great programming editor. Most of us are more efficient navigating
+documents with a mouse than a keyboard. All of the files you have been editing
+with <code>nano</code> could have been edited with Atom, BBEdit, Gedit, Notepad++, etc.</p>
+
+<p>Some people prefer programming in an Integrated Development Environment (IDE).
+Popular IDEs for Python include IDLE, PyCharm, Spyder and Eclipse. IDEs can make
+debugging easier as they automatically place your cursor and lines with bugs and
+let you manually inspect variable contents. While IDEs may make your Python
+programming more efficient, they separate you from Unix. Since one of the
+reasons you are taking this course is to learn some Unix, I don&#8217;t recommend
+using an IDE at this time.</p>
+
+<p>So which programming/text editor should you use? Whatever is installed by
+default in your Linux distribution should be fine.</p>
+
+<h2 id="usefulunixcommands">Useful Unix Commands</h2>
+
+<p>The <code>wc</code> program counts the characters, words, and lines in text files. You
+could counts the words in this document, for example.</p>
+
+<pre><code>wc gumpy.md
+</code></pre>
+
+<p>One of the most useful programs is <code>grep</code>. This prints out lines that match
+specific strings or patterns. For example, if you wanted to print out all the
+lines with the word Unix you would do the following:</p>
+
+<pre><code>grep Unix gumpy.md
+</code></pre>
+
+<p>To count how many lines that was, you could either use the <code>-c</code> flag to <code>grep</code>
+or <strong>pipe</strong> the output to <code>wc</code>.</p>
+
+<pre><code>grep -c Unix gumpy.md
+grep Unix gumpy.md | wc
+</code></pre>
+
+<p>When working with tabular data, you will find that <code>sort</code> is very useful, as it
+let&#8217;s you sort the lines on different columns.</p>
+
+<p>When monitoring the progress of programs that take a long time to run, you will
+find <code>time</code> useful for timing how long a program runs and <code>top</code> for monitoring
+how much RAM or other resources a program is taking.</p>
+
+<p>To see how much free space you have on your file system, use the <code>df</code> (disk
+free) command with the <code>-h</code> option to make it more human-readable (try it both
+ways).</p>
+
+<pre><code>df
+df -h
+</code></pre>
+
+<p>Another useful command is <code>du</code> (disk usage) which shows how much space each of
+your files and directories uses.</p>
+
+<pre><code>du
+du -h
+</code></pre>
+
+<h2 id="unixquickreference">Unix Quick Reference</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Token</th>
+	<th style="text-align:left;">Function</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">.</td>
+	<td style="text-align:left;">your current directory (see pwd)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">..</td>
+	<td style="text-align:left;">your parent directory</td>
+</tr>
+<tr>
+	<td style="text-align:left;">~</td>
+	<td style="text-align:left;">your home directory (also $HOME)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">^C</td>
+	<td style="text-align:left;">send interrupt signal</td>
+</tr>
+<tr>
+	<td style="text-align:left;">^D</td>
+	<td style="text-align:left;">send end-of-file character</td>
+</tr>
+<tr>
+	<td style="text-align:left;">tab</td>
+	<td style="text-align:left;">tab-complete names</td>
+</tr>
+<tr>
+	<td style="text-align:left;">*</td>
+	<td style="text-align:left;">wildcard - matches everything</td>
+</tr>
+<tr>
+	<td style="text-align:left;">|</td>
+	<td style="text-align:left;">pipe output from one command to another</td>
+</tr>
+<tr>
+	<td style="text-align:left;">&gt;</td>
+	<td style="text-align:left;">redirect output to file</td>
+</tr>
+</tbody>
+</table>
+
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Command</th>
+	<th style="text-align:left;">Example</th>
+	<th style="text-align:left;">Intent</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><code>cat</code></td>
+	<td style="text-align:left;"><code>cat &gt; f</code></td>
+	<td style="text-align:left;">create file f and wait for keyboard (see ^D)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>cat f</code></td>
+	<td style="text-align:left;">stream contents of file f to STDOUT</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>cat a b &gt; c</code></td>
+	<td style="text-align:left;">concatenate files a and b into c</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>cd</code></td>
+	<td style="text-align:left;"><code>cd d</code></td>
+	<td style="text-align:left;">change to relative directory d</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>cd ..</code></td>
+	<td style="text-align:left;">go up one directory</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>cd /d</code></td>
+	<td style="text-align:left;">change to absolute directory d</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>chmod</code></td>
+	<td style="text-align:left;"><code>chmod 644 f</code></td>
+	<td style="text-align:left;">change permissions for file f in octal format</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>chmod u+x f</code></td>
+	<td style="text-align:left;">change permissions for f the hard way</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>cp</code></td>
+	<td style="text-align:left;"><code>cp f1 f2</code></td>
+	<td style="text-align:left;">make a copy of file f1 called f2</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>date</code></td>
+	<td style="text-align:left;"><code>date</code></td>
+	<td style="text-align:left;">print the current date</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>df</code></td>
+	<td style="text-align:left;"><code>df -h .</code></td>
+	<td style="text-align:left;">display free space on file system</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>du</code></td>
+	<td style="text-align:left;"><code>du -h ~</code></td>
+	<td style="text-align:left;">display the sizes of your files</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>git</code></td>
+	<td style="text-align:left;"><code>git add f</code></td>
+	<td style="text-align:left;">start tracking file f</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>git commit -m &quot;message&quot;</code></td>
+	<td style="text-align:left;">finished edits, ready to upload</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>git push</code></td>
+	<td style="text-align:left;">put changes into repository</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>git pull</code></td>
+	<td style="text-align:left;">retrieve latest documents from repository</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>git status</code></td>
+	<td style="text-align:left;">check on status of repository</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>grep</code></td>
+	<td style="text-align:left;"><code>grep p f</code></td>
+	<td style="text-align:left;">print lines with the letter p in file f</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>gzip</code></td>
+	<td style="text-align:left;"><code>gzip f</code></td>
+	<td style="text-align:left;">compress file f</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>gunzip</code></td>
+	<td style="text-align:left;"><code>gunzip f.gz</code></td>
+	<td style="text-align:left;">uncompress file f.gz</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>head</code></td>
+	<td style="text-align:left;"><code>head f</code></td>
+	<td style="text-align:left;">display the first 10 lines of file f</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>head -2 f</code></td>
+	<td style="text-align:left;">display the first 2 lines of file f</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>history</code></td>
+	<td style="text-align:left;"><code>history</code></td>
+	<td style="text-align:left;">display the recent commands you typed</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>kill</code></td>
+	<td style="text-align:left;"><code>kill 1023</code></td>
+	<td style="text-align:left;">kill process with id 1023</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>less</code></td>
+	<td style="text-align:left;"><code>less f</code></td>
+	<td style="text-align:left;">page through a file</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>ln</code></td>
+	<td style="text-align:left;"><code>ln -s f1 f2</code></td>
+	<td style="text-align:left;">make f2 an alias of f1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>ls</code></td>
+	<td style="text-align:left;"><code>ls</code></td>
+	<td style="text-align:left;">list current directory</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>ls -l</code></td>
+	<td style="text-align:left;">list with file details</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>ls -la</code></td>
+	<td style="text-align:left;">also show invisible files</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>ls -lta</code></td>
+	<td style="text-align:left;">sort by time instead of name</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>ls -ltaF</code></td>
+	<td style="text-align:left;">also show file type symbols</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>man</code></td>
+	<td style="text-align:left;"><code>man ls</code></td>
+	<td style="text-align:left;">read the manual page on ls command</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>mkdir</code></td>
+	<td style="text-align:left;"><code>mkdir d</code></td>
+	<td style="text-align:left;">make a directory named d</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>more</code></td>
+	<td style="text-align:left;"><code>more f</code></td>
+	<td style="text-align:left;">page through file f (see less)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>mv</code></td>
+	<td style="text-align:left;"><code>mv foo bar</code></td>
+	<td style="text-align:left;">rename file foo as bar</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>mv foo ..</code></td>
+	<td style="text-align:left;">move file foo to parent directory</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>nano</code></td>
+	<td style="text-align:left;"><code>nano</code></td>
+	<td style="text-align:left;">use the nano text file editor</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>pwd</code></td>
+	<td style="text-align:left;"><code>pwd</code></td>
+	<td style="text-align:left;">print working directory</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>rm</code></td>
+	<td style="text-align:left;"><code>rm f1 f2</code></td>
+	<td style="text-align:left;">remove files f1 and f2</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>rm -r d</code></td>
+	<td style="text-align:left;">remove directory d and all files beneath</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>rm -rf /</code></td>
+	<td style="text-align:left;">destroy your computer</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>rmdir</code></td>
+	<td style="text-align:left;"><code>rmdir d</code></td>
+	<td style="text-align:left;">remove directory d</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>sort</code></td>
+	<td style="text-align:left;"><code>sort f</code></td>
+	<td style="text-align:left;">sort file f alphabetically by first column</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>sort -n f</code></td>
+	<td style="text-align:left;">sort file f numerically by first column</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>sort -k 2 f</code></td>
+	<td style="text-align:left;">sort file f alphabetically by column 2</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>tail</code></td>
+	<td style="text-align:left;"><code>tail f</code></td>
+	<td style="text-align:left;">display the last 10 lines of file f</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>tail -f f</code></td>
+	<td style="text-align:left;">as above and keep displaying if file is open</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>tar</code></td>
+	<td style="text-align:left;"><code>tar -cf ...</code></td>
+	<td style="text-align:left;">create a compressed tar-ball (-z to compress)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><code>tar -xf ...</code></td>
+	<td style="text-align:left;">decompress a tar-ball (-z if compressed)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>time</code></td>
+	<td style="text-align:left;"><code>time ...</code></td>
+	<td style="text-align:left;">determine how much time a process takes</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>top</code></td>
+	<td style="text-align:left;"><code>top</code></td>
+	<td style="text-align:left;">display processes running on your system</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>touch</code></td>
+	<td style="text-align:left;"><code>touch f</code></td>
+	<td style="text-align:left;">update file f modification time (create if needed)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>wc</code></td>
+	<td style="text-align:left;"><code>wc f</code></td>
+	<td style="text-align:left;">count the lines, words, and characters in file f</td>
+</tr>
+</tbody>
+</table>
+<script>var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function c(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function j(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function g(t,s){var r="";for(var q=0;q<t.childNodes.length;q++){if(t.childNodes[q].nodeType==3){var p=t.childNodes[q].nodeValue;if(s){p=p.replace(/\n/g,"")}r+=p}else{if(t.childNodes[q].nodeName=="BR"){r+="\n"}else{r+=g(t.childNodes[q])}}}if(/MSIE [678]/.test(navigator.userAgent)){r=r.replace(/\r/g,"\n")}return r}function a(s){var q=s.className.split(/\s+/);q=q.concat(s.parentNode.className.split(/\s+/));for(var p=0;p<q.length;p++){var r=q[p].replace(/^language-/,"");if(d[r]||r=="no-highlight"){return r}}}function b(p){var q=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{q.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);q.push({event:"stop",offset:t,node:s.childNodes[r]})}}}return t})(p,0);return q}function l(y,z,x){var r=0;var w="";var t=[];function u(){if(y.length&&z.length){if(y[0].offset!=z[0].offset){return(y[0].offset<z[0].offset)?y:z}else{return z[0].event=="start"?y:z}}else{return y.length?y:z}}function s(C){var D="<"+C.nodeName.toLowerCase();for(var A=0;A<C.attributes.length;A++){var B=C.attributes[A];D+=" "+B.nodeName.toLowerCase();if(B.nodeValue!=undefined&&B.nodeValue!=false&&B.nodeValue!=null){D+='="'+m(B.nodeValue)+'"'}}return D+">"}while(y.length||z.length){var v=u().splice(0,1)[0];w+=m(x.substr(r,v.offset-r));r=v.offset;if(v.event=="start"){w+=s(v.node);t.push(v.node)}else{if(v.event=="stop"){var q=t.length;do{q--;var p=t[q];w+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);t.splice(q,1);while(q<t.length){w+=s(t[q]);q++}}}}w+=x.substr(r);return w}function i(){function p(u,t,v){if(u.compiled){return}if(!v){u.bR=c(t,u.b?u.b:"\\B|\\b");if(!u.e&&!u.eW){u.e="\\B|\\b"}if(u.e){u.eR=c(t,u.e)}}if(u.i){u.iR=c(t,u.i)}if(u.r==undefined){u.r=1}if(u.k){u.lR=c(t,u.l||hljs.IR,true)}for(var s in u.k){if(!u.k.hasOwnProperty(s)){continue}if(u.k[s] instanceof Object){u.kG=u.k}else{u.kG={keyword:u.k}}break}if(!u.c){u.c=[]}u.compiled=true;for(var r=0;r<u.c.length;r++){p(u.c[r],t,false)}if(u.starts){p(u.starts,t,false)}}for(var q in d){if(!d.hasOwnProperty(q)){continue}p(d[q].dM,d[q],true)}}function e(J,D){if(!i.called){i();i.called=true}function z(r,M){for(var L=0;L<M.c.length;L++){if(M.c[L].bR.test(r)){return M.c[L]}}}function w(L,r){if(C[L].e&&C[L].eR.test(r)){return 1}if(C[L].eW){var M=w(L-1,r);return M?M+1:0}return 0}function x(r,L){return L.iR&&L.iR.test(r)}function A(O,N){var M=[];for(var L=0;L<O.c.length;L++){M.push(O.c[L].b)}var r=C.length-1;do{if(C[r].e){M.push(C[r].e)}r--}while(C[r+1].eW);if(O.i){M.push(O.i)}return c(N,"("+M.join("|")+")",true)}function s(M,L){var N=C[C.length-1];if(!N.t){N.t=A(N,H)}N.t.lastIndex=L;var r=N.t.exec(M);if(r){return[M.substr(L,r.index-L),r[0],false]}else{return[M.substr(L),"",true]}}function p(O,r){var L=H.cI?r[0].toLowerCase():r[0];for(var N in O.kG){if(!O.kG.hasOwnProperty(N)){continue}var M=O.kG[N].hasOwnProperty(L);if(M){return[N,M]}}return false}function F(M,O){if(!O.k){return m(M)}var N="";var P=0;O.lR.lastIndex=0;var L=O.lR.exec(M);while(L){N+=m(M.substr(P,L.index-P));var r=p(O,L);if(r){t+=r[1];N+='<span class="'+r[0]+'">'+m(L[0])+"</span>"}else{N+=m(L[0])}P=O.lR.lastIndex;L=O.lR.exec(M)}N+=m(M.substr(P,M.length-P));return N}function K(r,M){if(M.sL&&d[M.sL]){var L=e(M.sL,r);t+=L.keyword_count;return L.value}else{return F(r,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){q+=L;M.buffer=""}else{if(M.eB){q+=m(r)+L;M.buffer=""}else{q+=L;M.buffer=r}}C.push(M);B+=M.r}function E(O,L,Q){var R=C[C.length-1];if(Q){q+=K(R.buffer+O,R);return false}var M=z(L,R);if(M){q+=K(R.buffer+O,R);I(M,L);return M.rB}var r=w(C.length-1,L);if(r){var N=R.cN?"</span>":"";if(R.rE){q+=K(R.buffer+O,R)+N}else{if(R.eE){q+=K(R.buffer+O,R)+N+m(L)}else{q+=K(R.buffer+O+L,R)+N}}while(r>1){N=C[C.length-2].cN?"</span>":"";q+=N;r--;C.length--}var P=C[C.length-1];C.length--;C[C.length-1].buffer="";if(P.starts){I(P.starts,"")}return R.rE}if(x(L,R)){throw"Illegal"}}var H=d[J];var C=[H.dM];var B=0;var t=0;var q="";try{var v=0;H.dM.buffer="";do{var y=s(D,v);var u=E(y[0],y[1],y[2]);v+=y[0].length;if(!u){v+=y[1].length}}while(!y[2]);if(C.length>1){throw"Illegal"}return{r:B,keyword_count:t,value:q}}catch(G){if(G=="Illegal"){return{r:0,keyword_count:0,value:m(D)}}else{throw G}}}function f(t){var r={keyword_count:0,r:0,value:m(t)};var q=r;for(var p in d){if(!d.hasOwnProperty(p)){continue}var s=e(p,t);s.language=p;if(s.keyword_count+s.r>q.keyword_count+q.r){q=s}if(s.keyword_count+s.r>r.keyword_count+r.r){q=r;r=s}}if(q.language){r.second_best=q}return r}function h(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function o(u,x,q){var y=g(u,q);var s=a(u);if(s=="no-highlight"){return}if(s){var w=e(s,y)}else{var w=f(y);s=w.language}var p=b(u);if(p.length){var r=document.createElement("pre");r.innerHTML=w.value;w.value=l(p,b(r),y)}w.value=h(w.value,x,q);var t=u.className;if(!t.match("(\\s|^)(language-)?"+s+"(\\s|$)")){t=t?(t+" "+s):s}if(/MSIE [678]/.test(navigator.userAgent)&&u.tagName=="CODE"&&u.parentNode.tagName=="PRE"){var r=u.parentNode;var v=document.createElement("div");v.innerHTML="<pre><code>"+w.value+"</code></pre>";u=v.firstChild.firstChild;v.firstChild.cN=r.cN;r.parentNode.replaceChild(v.firstChild,r)}else{u.innerHTML=w.value}u.className=t;u.result={language:s,kw:w.keyword_count,re:w.r};if(w.second_best){u.second_best={language:w.second_best.language,kw:w.second_best.keyword_count,re:w.second_best.r}}}function k(){if(k.called){return}k.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=j(r[p]);if(q){o(q,hljs.tabReplace)}}}function n(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",k,false);window.addEventListener("load",k,false)}else{if(window.attachEvent){window.attachEvent("onload",k)}else{window.onload=k}}}var d={};this.LANGUAGES=d;this.highlight=e;this.highlightAuto=f;this.fixMarkup=h;this.highlightBlock=o;this.initHighlighting=k;this.initHighlightingOnLoad=n;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0x[A-Za-z0-9]+|\\d+(\\.\\d+)?)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.inherit=function(p,s){var r={};for(var q in p){r[q]=p[q]}if(s){for(var q in s){r[q]=s[q]}}return r}}();hljs.LANGUAGES.bash=function(){var d={"true":1,"false":1};var b={cN:"variable",b:"\\$([a-zA-Z0-9_]+)\\b"};var a={cN:"variable",b:"\\$\\{(([^}])|(\\\\}))+\\}",c:[hljs.CNM]};var c={cN:"string",b:'"',e:'"',i:"\\n",c:[hljs.BE,b,a],r:0};var e={cN:"test_condition",b:"",e:"",c:[c,b,a,hljs.CNM],k:{literal:d},r:0};return{dM:{k:{keyword:{"if":1,then:1,"else":1,fi:1,"for":1,"break":1,"continue":1,"while":1,"in":1,"do":1,done:1,echo:1,exit:1,"return":1,set:1,declare:1},literal:d},c:[{cN:"shebang",b:"(#!\\/bin\\/bash)|(#!\\/bin\\/sh)",r:10},hljs.HCM,hljs.CNM,c,b,a,hljs.inherit(e,{b:"\\[ ",e:" \\]",r:0}),hljs.inherit(e,{b:"\\[\\[ ",e:" \\]\\]"})]}}}();hljs.LANGUAGES.cs={dM:{k:{"abstract":1,as:1,base:1,bool:1,"break":1,"byte":1,"case":1,"catch":1,"char":1,checked:1,"class":1,"const":1,"continue":1,decimal:1,"default":1,delegate:1,"do":1,"do":1,"double":1,"else":1,"enum":1,event:1,explicit:1,extern:1,"false":1,"finally":1,fixed:1,"float":1,"for":1,foreach:1,"goto":1,"if":1,implicit:1,"in":1,"int":1,"interface":1,internal:1,is:1,lock:1,"long":1,namespace:1,"new":1,"null":1,object:1,operator:1,out:1,override:1,params:1,"private":1,"protected":1,"public":1,readonly:1,ref:1,"return":1,sbyte:1,sealed:1,"short":1,sizeof:1,stackalloc:1,"static":1,string:1,struct:1,"switch":1,"this":1,"throw":1,"true":1,"try":1,"typeof":1,uint:1,ulong:1,unchecked:1,unsafe:1,ushort:1,using:1,virtual:1,"volatile":1,"void":1,"while":1,ascending:1,descending:1,from:1,get:1,group:1,into:1,join:1,let:1,orderby:1,partial:1,select:1,set:1,value:1,"var":1,where:1,yield:1},c:[{cN:"comment",b:"///",e:"$",rB:true,c:[{cN:"xmlDocTag",b:"///|<!--|-->"},{cN:"xmlDocTag",b:"</?",e:">"}]},hljs.CLCM,hljs.CBLCLM,{cN:"string",b:'@"',e:'"',c:[{b:'""'}]},hljs.ASM,hljs.QSM,hljs.CNM]}};hljs.LANGUAGES.ruby=function(){var g="[a-zA-Z_][a-zA-Z0-9_]*(\\!|\\?)?";var a="[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?";var n={keyword:{and:1,"false":1,then:1,defined:1,module:1,"in":1,"return":1,redo:1,"if":1,BEGIN:1,retry:1,end:1,"for":1,"true":1,self:1,when:1,next:1,until:1,"do":1,begin:1,unless:1,END:1,rescue:1,nil:1,"else":1,"break":1,undef:1,not:1,"super":1,"class":1,"case":1,require:1,yield:1,alias:1,"while":1,ensure:1,elsif:1,or:1,def:1},keymethods:{__id__:1,__send__:1,abort:1,abs:1,"all?":1,allocate:1,ancestors:1,"any?":1,arity:1,assoc:1,at:1,at_exit:1,autoload:1,"autoload?":1,"between?":1,binding:1,binmode:1,"block_given?":1,call:1,callcc:1,caller:1,capitalize:1,"capitalize!":1,casecmp:1,"catch":1,ceil:1,center:1,chomp:1,"chomp!":1,chop:1,"chop!":1,chr:1,"class":1,class_eval:1,"class_variable_defined?":1,class_variables:1,clear:1,clone:1,close:1,close_read:1,close_write:1,"closed?":1,coerce:1,collect:1,"collect!":1,compact:1,"compact!":1,concat:1,"const_defined?":1,const_get:1,const_missing:1,const_set:1,constants:1,count:1,crypt:1,"default":1,default_proc:1,"delete":1,"delete!":1,delete_at:1,delete_if:1,detect:1,display:1,div:1,divmod:1,downcase:1,"downcase!":1,downto:1,dump:1,dup:1,each:1,each_byte:1,each_index:1,each_key:1,each_line:1,each_pair:1,each_value:1,each_with_index:1,"empty?":1,entries:1,eof:1,"eof?":1,"eql?":1,"equal?":1,"eval":1,exec:1,exit:1,"exit!":1,extend:1,fail:1,fcntl:1,fetch:1,fileno:1,fill:1,find:1,find_all:1,first:1,flatten:1,"flatten!":1,floor:1,flush:1,for_fd:1,foreach:1,fork:1,format:1,freeze:1,"frozen?":1,fsync:1,getc:1,gets:1,global_variables:1,grep:1,gsub:1,"gsub!":1,"has_key?":1,"has_value?":1,hash:1,hex:1,id:1,include:1,"include?":1,included_modules:1,index:1,indexes:1,indices:1,induced_from:1,inject:1,insert:1,inspect:1,instance_eval:1,instance_method:1,instance_methods:1,"instance_of?":1,"instance_variable_defined?":1,instance_variable_get:1,instance_variable_set:1,instance_variables:1,"integer?":1,intern:1,invert:1,ioctl:1,"is_a?":1,isatty:1,"iterator?":1,join:1,"key?":1,keys:1,"kind_of?":1,lambda:1,last:1,length:1,lineno:1,ljust:1,load:1,local_variables:1,loop:1,lstrip:1,"lstrip!":1,map:1,"map!":1,match:1,max:1,"member?":1,merge:1,"merge!":1,method:1,"method_defined?":1,method_missing:1,methods:1,min:1,module_eval:1,modulo:1,name:1,nesting:1,"new":1,next:1,"next!":1,"nil?":1,nitems:1,"nonzero?":1,object_id:1,oct:1,open:1,pack:1,partition:1,pid:1,pipe:1,pop:1,popen:1,pos:1,prec:1,prec_f:1,prec_i:1,print:1,printf:1,private_class_method:1,private_instance_methods:1,"private_method_defined?":1,private_methods:1,proc:1,protected_instance_methods:1,"protected_method_defined?":1,protected_methods:1,public_class_method:1,public_instance_methods:1,"public_method_defined?":1,public_methods:1,push:1,putc:1,puts:1,quo:1,raise:1,rand:1,rassoc:1,read:1,read_nonblock:1,readchar:1,readline:1,readlines:1,readpartial:1,rehash:1,reject:1,"reject!":1,remainder:1,reopen:1,replace:1,require:1,"respond_to?":1,reverse:1,"reverse!":1,reverse_each:1,rewind:1,rindex:1,rjust:1,round:1,rstrip:1,"rstrip!":1,scan:1,seek:1,select:1,send:1,set_trace_func:1,shift:1,singleton_method_added:1,singleton_methods:1,size:1,sleep:1,slice:1,"slice!":1,sort:1,"sort!":1,sort_by:1,split:1,sprintf:1,squeeze:1,"squeeze!":1,srand:1,stat:1,step:1,store:1,strip:1,"strip!":1,sub:1,"sub!":1,succ:1,"succ!":1,sum:1,superclass:1,swapcase:1,"swapcase!":1,sync:1,syscall:1,sysopen:1,sysread:1,sysseek:1,system:1,syswrite:1,taint:1,"tainted?":1,tell:1,test:1,"throw":1,times:1,to_a:1,to_ary:1,to_f:1,to_hash:1,to_i:1,to_int:1,to_io:1,to_proc:1,to_s:1,to_str:1,to_sym:1,tr:1,"tr!":1,tr_s:1,"tr_s!":1,trace_var:1,transpose:1,trap:1,truncate:1,"tty?":1,type:1,ungetc:1,uniq:1,"uniq!":1,unpack:1,unshift:1,untaint:1,untrace_var:1,upcase:1,"upcase!":1,update:1,upto:1,"value?":1,values:1,values_at:1,warn:1,write:1,write_nonblock:1,"zero?":1,zip:1}};var h={cN:"yardoctag",b:"@[A-Za-z]+"};var d={cN:"comment",b:"#",e:"$",c:[h]};var c={cN:"comment",b:"^\\=begin",e:"^\\=end",c:[h],r:10};var b={cN:"comment",b:"^__END__",e:"\\n$"};var u={cN:"subst",b:"#\\{",e:"}",l:g,k:n};var p=[hljs.BE,u];var s={cN:"string",b:"'",e:"'",c:p,r:0};var r={cN:"string",b:'"',e:'"',c:p,r:0};var q={cN:"string",b:"%[qw]?\\(",e:"\\)",c:p,r:10};var o={cN:"string",b:"%[qw]?\\[",e:"\\]",c:p,r:10};var m={cN:"string",b:"%[qw]?{",e:"}",c:p,r:10};var l={cN:"string",b:"%[qw]?<",e:">",c:p,r:10};var k={cN:"string",b:"%[qw]?/",e:"/",c:p,r:10};var j={cN:"string",b:"%[qw]?%",e:"%",c:p,r:10};var i={cN:"string",b:"%[qw]?-",e:"-",c:p,r:10};var t={cN:"string",b:"%[qw]?\\|",e:"\\|",c:p,r:10};var e={cN:"function",b:"\\bdef\\s+",e:" |$|;",l:g,k:n,c:[{cN:"title",b:a,l:g,k:n},{cN:"params",b:"\\(",e:"\\)",l:g,k:n},d,c,b]};var f={cN:"identifier",b:g,l:g,k:n,r:0};var v=[d,c,b,s,r,q,o,m,l,k,j,i,t,{cN:"class",b:"\\b(class|module)\\b",e:"$|;",k:{"class":1,module:1},c:[{cN:"title",b:"[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?",r:0},{cN:"inheritance",b:"<\\s*",c:[{cN:"parent",b:"("+hljs.IR+"::)?"+hljs.IR}]},d,c,b]},e,{cN:"constant",b:"(::)?([A-Z]\\w*(::)?)+",r:0},{cN:"symbol",b:":",c:[s,r,q,o,m,l,k,j,i,t,f],r:0},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",r:0},{cN:"number",b:"\\?\\w"},{cN:"variable",b:"(\\$\\W)|((\\$|\\@\\@?)(\\w+))"},f,{b:"("+hljs.RSR+")\\s*",c:[d,c,b,{cN:"regexp",b:"/",e:"/[a-z]*",i:"\\n",c:[hljs.BE]}],r:0}];u.c=v;e.c[1].c=v;return{dM:{l:g,k:n,c:v}}}();hljs.LANGUAGES.diff={cI:true,dM:{c:[{cN:"chunk",b:"^\\@\\@ +\\-\\d+,\\d+ +\\+\\d+,\\d+ +\\@\\@$",r:10},{cN:"chunk",b:"^\\*\\*\\* +\\d+,\\d+ +\\*\\*\\*\\*$",r:10},{cN:"chunk",b:"^\\-\\-\\- +\\d+,\\d+ +\\-\\-\\-\\-$",r:10},{cN:"header",b:"Index: ",e:"$"},{cN:"header",b:"=====",e:"=====$"},{cN:"header",b:"^\\-\\-\\-",e:"$"},{cN:"header",b:"^\\*{3} ",e:"$"},{cN:"header",b:"^\\+\\+\\+",e:"$"},{cN:"header",b:"\\*{5}",e:"\\*{5}$"},{cN:"addition",b:"^\\+",e:"$"},{cN:"deletion",b:"^\\-",e:"$"},{cN:"change",b:"^\\!",e:"$"}]}};hljs.LANGUAGES.javascript={dM:{k:{keyword:{"in":1,"if":1,"for":1,"while":1,"finally":1,"var":1,"new":1,"function":1,"do":1,"return":1,"void":1,"else":1,"break":1,"catch":1,"instanceof":1,"with":1,"throw":1,"case":1,"default":1,"try":1,"this":1,"switch":1,"continue":1,"typeof":1,"delete":1},literal:{"true":1,"false":1,"null":1}},c:[hljs.ASM,hljs.QSM,hljs.CLCM,hljs.CBLCLM,hljs.CNM,{b:"("+hljs.RSR+"|case|return|throw)\\s*",k:{"return":1,"throw":1,"case":1},c:[hljs.CLCM,hljs.CBLCLM,{cN:"regexp",b:"/",e:"/[gim]*",c:[{b:"\\\\/"}]}],r:0},{cN:"function",b:"\\bfunction\\b",e:"{",k:{"function":1},c:[{cN:"title",b:"[A-Za-z$_][0-9A-Za-z$_]*"},{cN:"params",b:"\\(",e:"\\)",c:[hljs.ASM,hljs.QSM,hljs.CLCM,hljs.CBLCLM]}]}]}};hljs.LANGUAGES.css=function(){var a={cN:"function",b:hljs.IR+"\\(",e:"\\)",c:[{eW:true,eE:true,c:[hljs.NM,hljs.ASM,hljs.QSM]}]};return{cI:true,dM:{i:"[=/|']",c:[hljs.CBLCLM,{cN:"id",b:"\\#[A-Za-z0-9_-]+"},{cN:"class",b:"\\.[A-Za-z0-9_-]+",r:0},{cN:"attr_selector",b:"\\[",e:"\\]",i:"$"},{cN:"pseudo",b:":(:)?[a-zA-Z0-9\\_\\-\\+\\(\\)\\\"\\']+"},{cN:"at_rule",b:"@(font-face|page)",l:"[a-z-]+",k:{"font-face":1,page:1}},{cN:"at_rule",b:"@",e:"[{;]",eE:true,k:{"import":1,page:1,media:1,charset:1},c:[a,hljs.ASM,hljs.QSM,hljs.NM]},{cN:"tag",b:hljs.IR,r:0},{cN:"rules",b:"{",e:"}",i:"[^\\s]",r:0,c:[hljs.CBLCLM,{cN:"rule",b:"[^\\s]",rB:true,e:";",eW:true,c:[{cN:"attribute",b:"[A-Z\\_\\.\\-]+",e:":",eE:true,i:"[^\\s]",starts:{cN:"value",eW:true,eE:true,c:[a,hljs.NM,hljs.QSM,hljs.ASM,hljs.CBLCLM,{cN:"hexcolor",b:"\\#[0-9A-F]+"},{cN:"important",b:"!important"}]}}]}]}]}}}();hljs.LANGUAGES.xml=function(){var b="[A-Za-z0-9\\._:-]+";var a={eW:true,c:[{cN:"attribute",b:b,r:0},{b:'="',rB:true,e:'"',c:[{cN:"value",b:'"',eW:true}]},{b:"='",rB:true,e:"'",c:[{cN:"value",b:"'",eW:true}]},{b:"=",c:[{cN:"value",b:"[^\\s/>]+"}]}]};return{cI:true,dM:{c:[{cN:"pi",b:"<\\?",e:"\\?>",r:10},{cN:"doctype",b:"<!DOCTYPE",e:">",r:10,c:[{b:"\\[",e:"\\]"}]},{cN:"comment",b:"<!--",e:"-->",r:10},{cN:"cdata",b:"<\\!\\[CDATA\\[",e:"\\]\\]>",r:10},{cN:"tag",b:"<style",e:">",k:{title:{style:1}},c:[a],starts:{cN:"css",e:"</style>",rE:true,sL:"css"}},{cN:"tag",b:"<script",e:">",k:{title:{script:1}},c:[a],starts:{cN:"javascript",e:"<\/script>",rE:true,sL:"javascript"}},{cN:"vbscript",b:"<%",e:"%>",sL:"vbscript"},{cN:"tag",b:"</?",e:"/?>",c:[{cN:"title",b:"[^ />]+"},a]}]}}}();hljs.LANGUAGES.java={dM:{k:{"false":1,"synchronized":1,"int":1,"abstract":1,"float":1,"private":1,"char":1,"interface":1,"boolean":1,"static":1,"null":1,"if":1,"const":1,"for":1,"true":1,"while":1,"long":1,"throw":1,strictfp:1,"finally":1,"protected":1,"extends":1,"import":1,"native":1,"final":1,"implements":1,"return":1,"void":1,"enum":1,"else":1,"break":1,"transient":1,"new":1,"catch":1,"instanceof":1,"byte":1,"super":1,"class":1,"volatile":1,"case":1,assert:1,"short":1,"package":1,"default":1,"double":1,"public":1,"try":1,"this":1,"switch":1,"continue":1,"throws":1},c:[{cN:"javadoc",b:"/\\*\\*",e:"\\*/",c:[{cN:"javadoctag",b:"@[A-Za-z]+"}],r:10},hljs.CLCM,hljs.CBLCLM,hljs.ASM,hljs.QSM,{cN:"class",b:"(class |interface )",e:"{",k:{"class":1,"interface":1},i:":",c:[{b:"(implements|extends)",k:{"extends":1,"implements":1},r:10},{cN:"title",b:hljs.UIR}]},hljs.CNM,{cN:"annotation",b:"@[A-Za-z]+"}]}};hljs.LANGUAGES.php={cI:true,dM:{k:{and:1,include_once:1,list:1,"abstract":1,global:1,"private":1,echo:1,"interface":1,as:1,"static":1,endswitch:1,array:1,"null":1,"if":1,endwhile:1,or:1,"const":1,"for":1,endforeach:1,self:1,"var":1,"while":1,isset:1,"public":1,"protected":1,exit:1,foreach:1,"throw":1,elseif:1,"extends":1,include:1,__FILE__:1,empty:1,require_once:1,"function":1,"do":1,xor:1,"return":1,"implements":1,parent:1,clone:1,use:1,__CLASS__:1,__LINE__:1,"else":1,"break":1,print:1,"eval":1,"new":1,"catch":1,__METHOD__:1,"class":1,"case":1,exception:1,php_user_filter:1,"default":1,die:1,require:1,__FUNCTION__:1,enddeclare:1,"final":1,"try":1,"this":1,"switch":1,"continue":1,endfor:1,endif:1,declare:1,unset:1,"true":1,"false":1,namespace:1},c:[hljs.CLCM,hljs.HCM,{cN:"comment",b:"/\\*",e:"\\*/",c:[{cN:"phpdoc",b:"\\s@[A-Za-z]+",r:10}]},hljs.CNM,hljs.inherit(hljs.ASM,{i:null}),hljs.inherit(hljs.QSM,{i:null}),{cN:"variable",b:"\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*"},{cN:"preprocessor",b:"<\\?php",r:10},{cN:"preprocessor",b:"\\?>"}]}};hljs.LANGUAGES.python=function(){var c={cN:"string",b:"(u|b)?r?'''",e:"'''",r:10};var b={cN:"string",b:'(u|b)?r?"""',e:'"""',r:10};var a={cN:"string",b:"(u|r|ur|b|br)'",e:"'",c:[hljs.BE],r:10};var f={cN:"string",b:'(u|r|ur|b|br)"',e:'"',c:[hljs.BE],r:10};var d={cN:"title",b:hljs.UIR};var e={cN:"params",b:"\\(",e:"\\)",c:[c,b,a,f,hljs.ASM,hljs.QSM]};return{dM:{k:{keyword:{and:1,elif:1,is:1,global:1,as:1,"in":1,"if":1,from:1,raise:1,"for":1,except:1,"finally":1,print:1,"import":1,pass:1,"return":1,exec:1,"else":1,"break":1,not:1,"with":1,"class":1,assert:1,yield:1,"try":1,"while":1,"continue":1,del:1,or:1,def:1,lambda:1,nonlocal:10},built_in:{None:1,True:1,False:1,Ellipsis:1,NotImplemented:1}},i:"(</|->|\\?)",c:[hljs.HCM,c,b,a,f,hljs.ASM,hljs.QSM,{cN:"function",b:"\\bdef ",e:":",i:"$",k:{def:1},c:[d,e],r:10},{cN:"class",b:"\\bclass ",e:":",i:"[${]",k:{"class":1},c:[d,e],r:10},hljs.CNM,{cN:"decorator",b:"@",e:"$"}]}}}();hljs.LANGUAGES.sql={cI:true,dM:{i:"[^\\s]",c:[{cN:"operator",b:"(begin|start|commit|rollback|savepoint|lock|alter|create|drop|rename|call|delete|do|handler|insert|load|replace|select|truncate|update|set|show|pragma)\\b",e:";|$",k:{keyword:{all:1,partial:1,global:1,month:1,current_timestamp:1,using:1,go:1,revoke:1,smallint:1,indicator:1,"end-exec":1,disconnect:1,zone:1,"with":1,character:1,assertion:1,to:1,add:1,current_user:1,usage:1,input:1,local:1,alter:1,match:1,collate:1,real:1,then:1,rollback:1,get:1,read:1,timestamp:1,session_user:1,not:1,integer:1,bit:1,unique:1,day:1,minute:1,desc:1,insert:1,execute:1,like:1,ilike:2,level:1,decimal:1,drop:1,"continue":1,isolation:1,found:1,where:1,constraints:1,domain:1,right:1,national:1,some:1,module:1,transaction:1,relative:1,second:1,connect:1,escape:1,close:1,system_user:1,"for":1,deferred:1,section:1,cast:1,current:1,sqlstate:1,allocate:1,intersect:1,deallocate:1,numeric:1,"public":1,preserve:1,full:1,"goto":1,initially:1,asc:1,no:1,key:1,output:1,collation:1,group:1,by:1,union:1,session:1,both:1,last:1,language:1,constraint:1,column:1,of:1,space:1,foreign:1,deferrable:1,prior:1,connection:1,unknown:1,action:1,commit:1,view:1,or:1,first:1,into:1,"float":1,year:1,primary:1,cascaded:1,except:1,restrict:1,set:1,references:1,names:1,table:1,outer:1,open:1,select:1,size:1,are:1,rows:1,from:1,prepare:1,distinct:1,leading:1,create:1,only:1,next:1,inner:1,authorization:1,schema:1,corresponding:1,option:1,declare:1,precision:1,immediate:1,"else":1,timezone_minute:1,external:1,varying:1,translation:1,"true":1,"case":1,exception:1,join:1,hour:1,"default":1,"double":1,scroll:1,value:1,cursor:1,descriptor:1,values:1,dec:1,fetch:1,procedure:1,"delete":1,and:1,"false":1,"int":1,is:1,describe:1,"char":1,as:1,at:1,"in":1,varchar:1,"null":1,trailing:1,any:1,absolute:1,current_time:1,end:1,grant:1,privileges:1,when:1,cross:1,check:1,write:1,current_date:1,pad:1,begin:1,temporary:1,exec:1,time:1,update:1,catalog:1,user:1,sql:1,date:1,on:1,identity:1,timezone_hour:1,natural:1,whenever:1,interval:1,work:1,order:1,cascade:1,diagnostics:1,nchar:1,having:1,left:1,call:1,"do":1,handler:1,load:1,replace:1,truncate:1,start:1,lock:1,show:1,pragma:1},aggregate:{count:1,sum:1,min:1,max:1,avg:1}},c:[{cN:"string",b:"'",e:"'",c:[hljs.BE,{b:"''"}],r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE,{b:'""'}],r:0},{cN:"string",b:"`",e:"`",c:[hljs.BE]},hljs.CNM,{b:"\\n"}]},hljs.CBLCLM,{cN:"comment",b:"--",e:"$"}]}};hljs.LANGUAGES.ini={cI:true,dM:{i:"[^\\s]",c:[{cN:"comment",b:";",e:"$"},{cN:"title",b:"^\\[",e:"\\]"},{cN:"setting",b:"^[a-z0-9_\\[\\]]+[ \\t]*=[ \\t]*",e:"$",c:[{cN:"value",eW:true,k:{on:1,off:1,"true":1,"false":1,yes:1,no:1},c:[hljs.QSM,hljs.NM]}]}]}};hljs.LANGUAGES.perl=function(){var c={getpwent:1,getservent:1,quotemeta:1,msgrcv:1,scalar:1,kill:1,dbmclose:1,undef:1,lc:1,ma:1,syswrite:1,tr:1,send:1,umask:1,sysopen:1,shmwrite:1,vec:1,qx:1,utime:1,local:1,oct:1,semctl:1,localtime:1,readpipe:1,"do":1,"return":1,format:1,read:1,sprintf:1,dbmopen:1,pop:1,getpgrp:1,not:1,getpwnam:1,rewinddir:1,qq:1,fileno:1,qw:1,endprotoent:1,wait:1,sethostent:1,bless:1,s:1,opendir:1,"continue":1,each:1,sleep:1,endgrent:1,shutdown:1,dump:1,chomp:1,connect:1,getsockname:1,die:1,socketpair:1,close:1,flock:1,exists:1,index:1,shmget:1,sub:1,"for":1,endpwent:1,redo:1,lstat:1,msgctl:1,setpgrp:1,abs:1,exit:1,select:1,print:1,ref:1,gethostbyaddr:1,unshift:1,fcntl:1,syscall:1,"goto":1,getnetbyaddr:1,join:1,gmtime:1,symlink:1,semget:1,splice:1,x:1,getpeername:1,recv:1,log:1,setsockopt:1,cos:1,last:1,reverse:1,gethostbyname:1,getgrnam:1,study:1,formline:1,endhostent:1,times:1,chop:1,length:1,gethostent:1,getnetent:1,pack:1,getprotoent:1,getservbyname:1,rand:1,mkdir:1,pos:1,chmod:1,y:1,substr:1,endnetent:1,printf:1,next:1,open:1,msgsnd:1,readdir:1,use:1,unlink:1,getsockopt:1,getpriority:1,rindex:1,wantarray:1,hex:1,system:1,getservbyport:1,endservent:1,"int":1,chr:1,untie:1,rmdir:1,prototype:1,tell:1,listen:1,fork:1,shmread:1,ucfirst:1,setprotoent:1,"else":1,sysseek:1,link:1,getgrgid:1,shmctl:1,waitpid:1,unpack:1,getnetbyname:1,reset:1,chdir:1,grep:1,split:1,require:1,caller:1,lcfirst:1,until:1,warn:1,"while":1,values:1,shift:1,telldir:1,getpwuid:1,my:1,getprotobynumber:1,"delete":1,and:1,sort:1,uc:1,defined:1,srand:1,accept:1,"package":1,seekdir:1,getprotobyname:1,semop:1,our:1,rename:1,seek:1,"if":1,q:1,chroot:1,sysread:1,setpwent:1,no:1,crypt:1,getc:1,chown:1,sqrt:1,write:1,setnetent:1,setpriority:1,foreach:1,tie:1,sin:1,msgget:1,map:1,stat:1,getlogin:1,unless:1,elsif:1,truncate:1,exec:1,keys:1,glob:1,tied:1,closedir:1,ioctl:1,socket:1,readlink:1,"eval":1,xor:1,readline:1,binmode:1,setservent:1,eof:1,ord:1,bind:1,alarm:1,pipe:1,atan2:1,getgrent:1,exp:1,time:1,push:1,setgrent:1,gt:1,lt:1,or:1,ne:1,m:1};var d={cN:"subst",b:"[$@]\\{",e:"}",k:c,r:10};var b={cN:"variable",b:"\\$\\d"};var a={cN:"variable",b:"[\\$\\%\\@\\*](\\^\\w\\b|#\\w+(\\:\\:\\w+)*|[^\\s\\w{]|{\\w+}|\\w+(\\:\\:\\w*)*)"};var g=[hljs.BE,d,b,a];var f={b:"->",c:[{b:hljs.IR},{b:"{",e:"}"}]};var e=[b,a,hljs.HCM,{cN:"comment",b:"^(__END__|__DATA__)",e:"\\n$",r:5},f,{cN:"string",b:"q[qwxr]?\\s*\\(",e:"\\)",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\[",e:"\\]",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\{",e:"\\}",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\|",e:"\\|",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\<",e:"\\>",c:g,r:5},{cN:"string",b:"qw\\s+q",e:"q",c:g,r:5},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"string",b:'"',e:'"',c:g,r:0},{cN:"string",b:"`",e:"`",c:[hljs.BE]},{cN:"string",b:"{\\w+}",r:0},{cN:"string",b:"-?\\w+\\s*\\=\\>",r:0},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",r:0},{cN:"regexp",b:"(s|tr|y)/(\\\\.|[^/])*/(\\\\.|[^/])*/[a-z]*",r:10},{cN:"regexp",b:"(m|qr)?/",e:"/[a-z]*",c:[hljs.BE],r:0},{cN:"sub",b:"\\bsub\\b",e:"(\\s*\\(.*?\\))?[;{]",k:{sub:1},r:5},{cN:"operator",b:"-\\w\\b",r:0},{cN:"pod",b:"\\=\\w",e:"\\=cut"}];d.c=e;f.c[1].c=e;return{dM:{k:c,c:e}}}();hljs.LANGUAGES.cpp=function(){var b={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};var a={cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:b,r:10};a.c=[a];return{dM:{k:b,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'",e:"[^\\\\]'",i:"[^\\\\][^']"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},a]}}}();</script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+    </div>
+</body>
+</html>
